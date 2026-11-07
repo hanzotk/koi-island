@@ -1,0 +1,48 @@
+{
+  "repo": "",
+  "version": "1.3.0-beta",
+  "label": "1.3.0 (Beta)",
+  "tag": "v1.3.0-beta",
+  "beta": true,
+  "date": "2026-11-07",
+  "tagline": "Widgets na Home, clima animado e metade do uso de CPU",
+  "notes": "Quadros da Home redimensionáveis e arrastáveis, clima animado, cor do álbum nos controles e metade do uso de CPU.",
+  "setup": {
+    "file": "KOI-Island-Setup-1.3.0-beta.exe",
+    "size": 74928302,
+    "sha256": "e928f2d4b6345ce8166aecf83ce2466c8c30a87a73527cff418e5c4ccdfb611f"
+  },
+  "portable": {
+    "file": "KOI-Island-1.3.0-beta-portable.exe",
+    "size": 74901310,
+    "sha256": "7ba624384673733edd42cdb93902a9be0c023cc58d8dde6705e28e843a14fa2f"
+  },
+  "changelog": [
+    {
+      "version": "1.3.0 (Beta)",
+      "date": "2026-11-07",
+      "items": [
+        "Quadros da Home redimensionáveis pelos lados e arrastáveis, com animação",
+        "Quadros grandes mostram mais: capa e controles da música, previsão das próximas horas",
+        "Clima animado conforme o tempo: sol, chuva, neve, tempestade, neblina e noite",
+        "Controles de música em qualquer estado da ilha fechada, com a cor do álbum",
+        "Aba Notificações maior, com mais espaço e barra de rolagem nova",
+        "Metade do uso de CPU da versão 1.2 e menos memória",
+        "Volume do Windows e do Spotify mais confiáveis (inclusive com Voicemeeter)",
+        "Bordas da ilha sem a emenda de 1 pixel no topo"
+      ]
+    },
+    {
+      "version": "1.2.1",
+      "date": "2026-11-02",
+      "items": [
+        "Temperatura do processador lida pelo driver PawnIO",
+        "Auxiliar nativo no lugar do PowerShell: muito menos processador",
+        "Animações aceleradas pela placa de vídeo",
+        "FPS só é medido quando um jogo está aberto, com opção de deixar sempre ligado",
+        "Marca discreta com temperatura, FPS e cor do texto à escolha",
+        "Clique no aviso do WhatsApp abre o app sem abrir a ilha"
+      ]
+    }
+  ]
+}
