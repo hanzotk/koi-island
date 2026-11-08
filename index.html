@@ -1,13 +1,13 @@
 <!doctype html>
-<html lang="pt-BR">
+<html lang="en">
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width,initial-scale=1">
 <title>KOI Island</title>
-<meta name="description" content="Uma ilha dinâmica para o Windows: música, sistema, FPS, WhatsApp, clima e atalhos no topo da tela, gastando menos de 1% do processador.">
+<meta name="description" content="A dynamic island for Windows: music, system stats, FPS, WhatsApp, weather and shortcuts at the top of your screen.">>
 <meta property="og:title" content="KOI Island — a ilha dinâmica do Windows">
 <meta property="og:description" content="Música, sistema, FPS, WhatsApp, clima e atalhos no topo da tela.">
-<meta property="og:image" content="assets/o_1home.webp">
+<meta property="og:image" content="assets/en/hx_1home.webp">
 <meta name="theme-color" content="#060607">
 <link rel="icon" href="assets/favicon.png">
 <link rel="apple-touch-icon" href="assets/icon-180.png">
@@ -61,8 +61,8 @@ h1 span{background:linear-gradient(90deg,var(--cpu),var(--gpu) 50%,var(--ram));-
 .micro{position:relative;margin-top:14px;font-size:13px;color:var(--tx3)}
 
 /* tela com a ilha */
-.screen{position:relative;margin:56px auto 0;max-width:960px;border-radius:22px;padding:10px;background:linear-gradient(180deg,#1b1c20,#0d0e10);border:1px solid var(--line2);box-shadow:0 40px 120px -20px rgba(79,143,247,.18),0 30px 80px rgba(0,0,0,.6)}
-.screen .view{position:relative;aspect-ratio:1520/500;border-radius:14px;overflow:hidden;background:#1b2a6b}
+.screen{position:relative;margin:56px auto 0;max-width:1040px;border-radius:22px;padding:10px;background:linear-gradient(180deg,#1b1c20,#0d0e10);border:1px solid var(--line2);box-shadow:0 40px 120px -20px rgba(79,143,247,.18),0 30px 80px rgba(0,0,0,.6)}
+.screen .view{position:relative;aspect-ratio:1800/940;border-radius:14px;overflow:hidden;background:#1b2a6b}
 .screen .view img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;opacity:0;transition:opacity .5s ease}
 .screen .view img.on{opacity:1}
 .states{display:flex;justify-content:center;gap:8px;margin-top:16px;flex-wrap:wrap}
@@ -182,6 +182,63 @@ footer .sp{margin-left:auto}
 html.js .rv{opacity:0;transform:translateY(18px);transition:opacity .8s ease,transform .8s cubic-bezier(.2,.8,.2,1)}
 html.js .rv.in{opacity:1;transform:none}
 @media (prefers-reduced-motion:reduce){*{transition:none!important;animation:none!important}.rv{opacity:1;transform:none}html{scroll-behavior:auto}}
+.themes{display:grid;grid-template-columns:repeat(3,1fr);gap:18px;margin-top:8px}
+.th{margin:0;border:1px solid var(--line);border-radius:18px;overflow:hidden;background:var(--bg2)}
+.th img{display:block;width:100%;height:auto;aspect-ratio:1600/512;object-fit:cover;object-position:top center;background:#1b2a6b}
+.th figcaption{padding:14px 16px 16px;display:grid;gap:4px}
+.th figcaption b{font-size:1.02rem}
+.th figcaption span{color:var(--tx2);font-size:.9rem;line-height:1.45}
+.thx{list-style:none;padding:0;margin:22px 0 0;display:flex;flex-wrap:wrap;gap:10px}
+.thx li{padding:8px 14px;border:1px solid var(--line);border-radius:999px;font-size:.88rem;color:var(--tx2)}
+.thx li b{color:var(--tx);font-weight:600}
+@media (max-width:900px){.themes{grid-template-columns:1fr}}
+.screen .view img{transition:opacity .35s ease}
+.cur{position:absolute;left:50%;top:60%;width:26px;height:26px;margin:-3px 0 0 -5px;z-index:3;pointer-events:none;transition:left .9s cubic-bezier(.45,.05,.3,1),top .9s cubic-bezier(.45,.05,.3,1),opacity .3s;filter:drop-shadow(0 2px 4px rgba(0,0,0,.5))}
+.cur svg{width:100%;height:100%;fill:#fff;stroke:#000;stroke-width:1.3;stroke-linejoin:round;transition:transform .12s}
+.cur.down svg{transform:scale(.82)}
+.cur::after{content:"";position:absolute;left:5px;top:3px;width:34px;height:34px;margin:-17px 0 0 -17px;border-radius:50%;border:2px solid rgba(255,255,255,.9);opacity:0;transform:scale(.3)}
+.cur.click::after{animation:curClick .5s ease-out}
+@keyframes curClick{0%{opacity:.9;transform:scale(.3)}100%{opacity:0;transform:scale(1.15)}}
+.states .play{min-width:38px;padding:7px 10px}
+@media (max-width:640px){.cur{width:18px;height:18px}}
+@media (prefers-reduced-motion:reduce){.cur{display:none}}
+.lsel{position:relative;margin-right:10px}
+.lbtn{display:inline-flex;align-items:center;gap:7px;height:36px;padding:0 10px 0 11px;border-radius:999px;border:1px solid var(--line);background:rgba(255,255,255,.03);color:var(--tx2);font:500 13px Geist,system-ui,sans-serif;cursor:pointer;transition:border-color .2s,color .2s,background .2s}
+.lbtn:hover,.lbtn[aria-expanded=true]{color:var(--tx);border-color:var(--line2);background:rgba(255,255,255,.06)}
+.lbtn:focus-visible{outline:2px solid #4f8ff7;outline-offset:2px}
+.lbtn .gl{width:16px;height:16px;fill:none;stroke:currentColor;stroke-width:1.7;flex:none}
+.lbtn .chv{width:14px;height:14px;fill:none;stroke:currentColor;stroke-width:2;stroke-linecap:round;stroke-linejoin:round;opacity:.7;transition:transform .2s}
+.lbtn[aria-expanded=true] .chv{transform:rotate(180deg)}
+.lbtn .lcode{display:none;font-weight:600;letter-spacing:.02em}
+.lmenu{position:absolute;right:0;top:calc(100% + 8px);z-index:80;min-width:200px;margin:0;padding:6px;list-style:none;border-radius:16px;background:rgba(22,23,27,.96);border:1px solid var(--line2);box-shadow:0 24px 60px rgba(0,0,0,.55),0 2px 8px rgba(0,0,0,.4);-webkit-backdrop-filter:blur(18px);backdrop-filter:blur(18px);transform-origin:top right;animation:lmIn .16s cubic-bezier(.2,.9,.3,1)}
+.lmenu[hidden]{display:none}
+@keyframes lmIn{from{opacity:0;transform:translateY(-4px) scale(.97)}to{opacity:1;transform:none}}
+.lmenu li{display:flex;align-items:center;gap:10px;padding:9px 10px;border-radius:10px;cursor:pointer;color:var(--tx2);font:500 14px Geist,system-ui,sans-serif;outline:0;transition:background .12s,color .12s}
+.lmenu li:hover,.lmenu li:focus{background:rgba(255,255,255,.07);color:var(--tx)}
+.lmenu li[aria-selected=true]{color:var(--tx)}
+.lmenu .lc{flex:none;display:grid;place-items:center;width:30px;height:22px;border-radius:6px;background:rgba(255,255,255,.07);font:600 11px Geist,system-ui,sans-serif;letter-spacing:.04em;color:var(--tx2)}
+.lmenu li[aria-selected=true] .lc{background:#fff;color:#000}
+.lmenu .ln{flex:1}
+.lmenu .ck{width:16px;height:16px;fill:none;stroke:currentColor;stroke-width:2.2;stroke-linecap:round;stroke-linejoin:round;opacity:0}
+.lmenu li[aria-selected=true] .ck{opacity:1}
+@media (max-width:640px){.lsel{margin-right:6px}.lbtn .lcur{display:none}.lbtn .lcode{display:inline}.lbtn{padding:0 8px 0 10px;gap:5px}}
+@media (prefers-reduced-motion:reduce){.lmenu{animation:none}.lbtn .chv{transition:none}}
+.sr{position:absolute;width:1px;height:1px;overflow:hidden;clip:rect(0 0 0 0);white-space:nowrap}
+.logo{white-space:nowrap}
+/* modo discreto: jogo de exemplo desenhado no canvas, com a ilha discreta por cima */
+.gp{margin:8px 0 0}
+.gps{position:relative;aspect-ratio:16/9;border-radius:18px;overflow:hidden;border:1px solid var(--line2);background:#0b0620;box-shadow:0 40px 100px -30px rgba(255,77,141,.25),0 24px 60px rgba(0,0,0,.5)}
+.gps canvas{position:absolute;inset:0;width:100%;height:100%;display:block}
+.gps .mk{position:absolute;top:0;left:50%;width:46%;height:auto;transform:translateX(-50%);pointer-events:none;filter:drop-shadow(0 2px 6px rgba(0,0,0,.35))}
+.gp figcaption{display:flex;align-items:center;justify-content:space-between;gap:12px;flex-wrap:wrap;margin-top:14px}
+.gp figcaption small{color:var(--tx3,var(--tx2));font-size:.8rem}
+.gpt{display:inline-flex;gap:6px}
+.gpt button{font:500 13px Geist,system-ui,sans-serif;color:var(--tx2);background:transparent;border:1px solid var(--line);border-radius:999px;padding:7px 14px;cursor:pointer;transition:all .2s}
+.gpt button:hover{color:var(--tx);border-color:var(--line2)}
+.gpt button[aria-pressed=true]{color:#000;background:#fff;border-color:#fff}
+@media (max-width:640px){.gps .mk{width:78%}}
+.lmenu{background:#16171b}
+.lmenu .lhd{padding:6px 10px 8px;font:600 11px Geist,system-ui,sans-serif;letter-spacing:.06em;text-transform:uppercase;color:var(--tx3,#8a8f98)}
 </style>
 </head>
 <body>
@@ -189,40 +246,43 @@ html.js .rv.in{opacity:1;transform:none}
 <header class="nav" id="top">
   <div class="wrap">
     <a class="logo" href="#top"><img src="assets/icon-64.png" alt="">KOI Island</a>
-    <nav aria-label="Seções">
-      <a href="#recursos">Recursos</a>
-      <a href="#abas">Abas</a>
-      <a href="#leve">Leveza</a>
-      <a href="#novidades">Novidades</a>
-      <a href="#perguntas">Perguntas</a>
+    <nav aria-label="Sections" data-ia="aria-label:aria.0">
+      <a href="#recursos"><span data-i="nav.res">Features</span></a>
+      <a href="#abas"><span data-i="nav.abas">Tabs</span></a>
+      <a href="#temas"><span data-i="nav.temas">Themes</span></a><a href="#leve"><span data-i="nav.leve">Lightweight</span></a>
+      <a href="#novidades"><span data-i="nav.nov">What's new</span></a>
+      <a href="#perguntas"><span data-i="nav.faq">FAQ</span></a>
     </nav>
-    <a class="btn btn-main" href="#baixar">Baixar</a>
+    <div class="lsel" id="lsel"><button type="button" class="lbtn" id="lang" aria-haspopup="listbox" aria-expanded="false" aria-label="Language: English"><svg class="gl" viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="9"/><path d="M3 12h18M12 3c2.5 2.6 3.8 5.6 3.8 9s-1.3 6.4-3.8 9c-2.5-2.6-3.8-5.6-3.8-9S9.5 5.6 12 3z"/></svg><span class="lcur">English</span><span class="lcode">EN</span><svg class="chv" viewBox="0 0 24 24" aria-hidden="true"><path d="m7 10 5 5 5-5"/></svg></button><div class="lmenu" id="lmw" hidden><p class="lhd" aria-hidden="true"><span data-i="lang.hd">Site language</span></p><ul role="listbox" id="lmenu" aria-label="Language"><li role="option" id="lo-en" data-l="en" aria-selected="false" tabindex="-1"><span class="lc">EN</span><span class="ln">English</span><svg class="ck" viewBox="0 0 24 24" aria-hidden="true"><path d="m5 12.5 4.5 4.5L19 7.5"/></svg></li><li role="option" id="lo-pt" data-l="pt" aria-selected="false" tabindex="-1"><span class="lc">PT</span><span class="ln">Português</span><svg class="ck" viewBox="0 0 24 24" aria-hidden="true"><path d="m5 12.5 4.5 4.5L19 7.5"/></svg></li><li role="option" id="lo-es" data-l="es" aria-selected="false" tabindex="-1"><span class="lc">ES</span><span class="ln">Español</span><svg class="ck" viewBox="0 0 24 24" aria-hidden="true"><path d="m5 12.5 4.5 4.5L19 7.5"/></svg></li><li role="option" id="lo-fr" data-l="fr" aria-selected="false" tabindex="-1"><span class="lc">FR</span><span class="ln">Français</span><svg class="ck" viewBox="0 0 24 24" aria-hidden="true"><path d="m5 12.5 4.5 4.5L19 7.5"/></svg></li><li role="option" id="lo-de" data-l="de" aria-selected="false" tabindex="-1"><span class="lc">DE</span><span class="ln">Deutsch</span><svg class="ck" viewBox="0 0 24 24" aria-hidden="true"><path d="m5 12.5 4.5 4.5L19 7.5"/></svg></li><li role="option" id="lo-it" data-l="it" aria-selected="false" tabindex="-1"><span class="lc">IT</span><span class="ln">Italiano</span><svg class="ck" viewBox="0 0 24 24" aria-hidden="true"><path d="m5 12.5 4.5 4.5L19 7.5"/></svg></li></ul></div></div><a class="btn btn-main" href="#baixar"><span data-i="nav.dl">Download</span></a>
   </div>
 </header>
 
 <main>
 <section class="hero">
   <div class="wrap">
-    <a class="pill" href="#novidades"><b data-ver>v1.3.0 (Beta)</b><span data-tag>Widgets na Home, clima animado e metade do uso de CPU</span></a>
-    <h1>O topo da sua tela agora <span>faz tudo</span>.</h1>
-    <p class="lead">Uma ilha dinâmica para o Windows: música, sistema, FPS, WhatsApp, clima e atalhos aparecem no topo da tela e somem quando você não precisa.</p>
+    <a class="pill" href="#novidades"><b data-ver>v1.4.0</b><span data-tag>Reply to WhatsApp and Discord from the island, laptop battery, English by default and new effects</span></a>
+    <h1><span data-i="hero.h1">The top of your screen now <span>does it all</span>.</span></h1>
+    <p class="lead"><span data-i="hero.lead">A dynamic island for Windows: music, system stats, FPS, WhatsApp, weather and shortcuts show up at the top of your screen and disappear when you don't need them.</span></p>
     <div class="cta">
-      <a class="btn btn-main" data-dl="setup" href="#baixar"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3v12m0 0-5-5m5 5 5-5M5 21h14"/></svg>Baixar para Windows</a>
-      <a class="btn btn-ghost" href="#abas">Ver por dentro</a>
+      <a class="btn btn-main" data-dl="setup" href="#baixar"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3v12m0 0-5-5m5 5 5-5M5 21h14"/></svg><span data-i="hero.dl">Download for Windows</span></a>
+      <a class="btn btn-ghost" href="#abas"><span data-i="hero.in">Take a look inside</span></a>
     </div>
-    <p class="micro">Grátis · Windows 10 e 11 (64 bits) · <span data-size>72 MB</span></p>
+    <p class="micro"><span data-i="hero.micro_a">Free · Windows 10 and 11 (64-bit) · </span><span data-size>72 MB</span></p>
 
-    <div class="screen rv" aria-label="A ilha em ação">
+    <div class="screen rv" aria-label="The island in action" data-ia="aria-label:aria.1">
       <div class="view" id="hv">
-        <img class="on" src="assets/o_1home.webp" alt="Ilha aberta na Home, com os quadros de música e clima aumentados" width="1520" height="500">
-        <img src="assets/o_2musica.webp" alt="Aba Música com capa, linha do tempo e volume" width="1520" height="500" loading="lazy">
-        <img src="assets/o_3sistema.webp" alt="Aba Sistema com CPU, GPU, RAM e discos" width="1520" height="500" loading="lazy">
-        <img src="assets/o_4notif.webp" alt="Aba Notificações com mensagens do WhatsApp" width="1520" height="500" loading="lazy">
-        <img src="assets/o_5controle.webp" alt="Aba Controle com volume, brilho e atalhos" width="1520" height="500" loading="lazy">
+        <img class="on" src="assets/en/hx_0fechada.webp" data-img="hx_0fechada" alt="Closed island at the top of the screen, playing music" data-ia="alt:alt.hx_0fechada" width="1800" height="940">
+        <img src="assets/en/hx_1home.webp" data-img="hx_1home" alt="Island open on Home, with large music and weather tiles" data-ia="alt:alt.hx_1home" width="1800" height="940">
+        <img src="assets/en/hx_2musica.webp" data-img="hx_2musica" alt="Music tab with cover, timeline and volume" data-ia="alt:alt.hx_2musica" width="1800" height="940" loading="lazy">
+        <img src="assets/en/hx_3notif.webp" data-img="hx_3notif" alt="Notifications tab with a reply to Ana being typed" data-ia="alt:alt.hx_3notif" width="1800" height="940" loading="lazy">
+        <img src="assets/en/hx_4resposta.webp" data-img="hx_4resposta" alt="Reply sent to Ana from the island" data-ia="alt:alt.hx_4resposta" width="1800" height="940" loading="lazy">
+        <img src="assets/en/hx_5sistema.webp" data-img="hx_5sistema" alt="System tab with CPU, GPU, RAM, network and disks" data-ia="alt:alt.hx_5sistema" width="1800" height="940" loading="lazy">
+        <img src="assets/en/hx_6controle.webp" data-img="hx_6controle" alt="Controls tab with volume, brightness and shortcuts" data-ia="alt:alt.hx_6controle" width="1800" height="940" loading="lazy">
+        <span class="cur" id="hcur" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M4 2.5v17.2l4.6-4.3 3 6.6 3-1.4-3-6.4h6.3z"/></svg></span>
       </div>
     </div>
-    <div class="states" role="group" aria-label="Escolher o que a ilha mostra">
-      <button type="button" aria-pressed="true">Home</button><button type="button" aria-pressed="false">Música</button><button type="button" aria-pressed="false">Sistema</button><button type="button" aria-pressed="false">Notificações</button><button type="button" aria-pressed="false">Controle</button>
+    <div class="states" role="group" aria-label="Choose what the island shows" data-ia="aria-label:aria.2">
+      <button type="button" data-f="1" aria-pressed="true"><span data-i="st.home">Home</span></button><button type="button" data-f="2" aria-pressed="false"><span data-i="st.mus">Music</span></button><button type="button" data-f="3" aria-pressed="false"><span data-i="st.ntf">Notifications</span></button><button type="button" data-f="5" aria-pressed="false"><span data-i="st.mon">System</span></button><button type="button" data-f="6" aria-pressed="false"><span data-i="st.ctl">Controls</span></button><button type="button" class="play" aria-pressed="true" aria-label="Pause the demo">❚❚</button>
     </div>
   </div>
 </section>
@@ -230,30 +290,30 @@ html.js .rv.in{opacity:1;transform:none}
 <section id="recursos">
   <div class="wrap">
     <div class="head rv">
-      <p class="kicker">Recursos</p>
-      <h2>Tudo a um passar de mouse.</h2>
-      <p class="sub">Passe o mouse no topo da tela e a ilha abre. Tire, e ela volta a ser só uma pílula discreta.</p>
+      <p class="kicker"><span data-i="res.k">Features</span></p>
+      <h2><span data-i="res.h">Everything is one hover away.</span></h2>
+      <p class="sub"><span data-i="res.s">Hover over the top of the screen and the island opens. Move away and it goes back to a discreet pill.</span></p>
     </div>
     <div class="grid">
-      <div class="f rv" style="--c:#ff5c8a"><div class="ic"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 3v10.55A4 4 0 1 0 14 17V7h4V3h-6z"/></svg></div><h3>Música em qualquer lugar</h3><p>Capa, controles e o volume do próprio app (Spotify e outros), com a cor do álbum pintando a ilha.</p></div>
-      <div class="f rv" style="--c:var(--cpu)"><div class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="5" y="5" width="14" height="14" rx="2"/><path d="M9 1v4M15 1v4M9 19v4M15 19v4M1 9h4M1 15h4M19 9h4M19 15h4"/></svg></div><h3>Sistema ao vivo</h3><p>Uso e temperatura de CPU e GPU, RAM, rede e discos, com barras suaves que respondem na hora.</p></div>
-      <div class="f rv" style="--c:var(--ram)"><div class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M6 12h4M8 10v4M15 13h.01M18 11h.01"/><rect x="2" y="6" width="20" height="12" rx="6"/></svg></div><h3>FPS real dos jogos</h3><p>Contador de FPS com 1% low, medido como os overlays profissionais, e aviso quando o FPS despenca.</p></div>
-      <div class="f rv" style="--c:var(--wa)"><div class="ic"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 2a10 10 0 0 0-8.6 15.1L2 22l5-1.3A10 10 0 1 0 12 2zm5.3 14c-.2.6-1.3 1.2-1.8 1.2-.5.1-1 .2-3.4-.7-2.8-1.1-4.6-4-4.8-4.2-.1-.2-1.1-1.5-1.1-2.9s.7-2 1-2.3c.2-.3.5-.3.7-.3h.5c.2 0 .4 0 .6.5l.8 2c.1.2.1.4 0 .5l-.4.6-.3.4c-.1.1-.3.3-.1.6.1.3.7 1.1 1.4 1.8.9.9 1.7 1.1 2 1.3.3.1.4.1.6-.1l.8-1c.2-.3.4-.2.6-.1l1.9.9c.3.1.5.2.5.3.1.2.1.7-.1 1.3z"/></svg></div><h3>WhatsApp na ilha</h3><p>Mensagens com foto de quem mandou e figurinhas. Um clique abre o WhatsApp, sem abrir a ilha.</p></div>
-      <div class="f rv" style="--c:var(--gpu)"><div class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="3" width="8" height="18" rx="2"/><rect x="13" y="3" width="8" height="8" rx="2"/><rect x="13" y="13" width="8" height="8" rx="2"/></svg></div><h3>Home com widgets</h3><p>Aumente, diminua e arraste os quadros como no Android. Música e clima ganham mais detalhes quando crescem.</p></div>
-      <div class="f rv" style="--c:var(--warm)"><div class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><circle cx="12" cy="12" r="4"/><path d="M12 2v2M12 20v2M4.9 4.9l1.4 1.4M17.7 17.7l1.4 1.4M2 12h2M20 12h2M4.9 19.1l1.4-1.4M17.7 6.3l1.4-1.4"/></svg></div><h3>Clima animado</h3><p>Sol, chuva, neve e tempestade animados no quadro, com máxima, mínima e as próximas horas.</p></div>
-      <div class="f rv" style="--c:#7dd3fc"><div class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M4 6h10M18 6h2M4 12h4M12 12h8M4 18h12M20 18h0"/><circle cx="16" cy="6" r="2"/><circle cx="10" cy="12" r="2"/><circle cx="18" cy="18" r="2"/></svg></div><h3>Controle rápido</h3><p>Volume, brilho, Wi-Fi, Bluetooth, não perturbe, luz noturna, modo avião e bloquear a tela.</p></div>
-      <div class="f rv" style="--c:#ff6b6b"><div class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="9"/><circle cx="12" cy="12" r="4" fill="currentColor"/></svg></div><h3>Gravação de tela</h3><p>Grave até 1440p a 60 fps, com o som do PC e o microfone, direto da ilha.</p></div>
-      <div class="f rv" style="--c:#c4b5fd"><div class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="5" width="18" height="16" rx="2"/><path d="M3 10h18M8 3v4M16 3v4"/></svg></div><h3>Calendário e notas</h3><p>Compromissos, feriados do Brasil e notas rápidas, sempre a um passar de mouse.</p></div>
-      <div class="f rv" style="--c:#e5e7eb"><div class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M4 8h16"/><path d="M6 14h3M11 14h3M16 14h2" opacity=".6"/></svg></div><h3>Marca discreta</h3><p>Prefere a tela limpa? A ilha vira um traço fino e deixa só os números, na cor que você escolher.</p></div>
-      <div class="f rv" style="--c:#fbbf24"><div class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M10.3 3.9 1.8 18a2 2 0 0 0 1.7 3h17a2 2 0 0 0 1.7-3L13.7 3.9a2 2 0 0 0-3.4 0zM12 9v4M12 17h.01"/></svg></div><h3>Avisos que importam</h3><p>Temperatura alta, carregador conectado e até uma lembrança para beber água.</p></div>
-      <div class="f rv" style="--c:#a7f3d0"><div class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M12 2l3 7h7l-5.5 4.5L18 21l-6-4-6 4 1.5-7.5L2 9h7z"/></svg></div><h3>Do seu jeito</h3><p>Tema, transparência, cor de destaque, sons e quais abas aparecem. Some sozinha em tela cheia.</p></div>
+      <div class="f rv" style="--c:#ff5c8a"><div class="ic"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 3v10.55A4 4 0 1 0 14 17V7h4V3h-6z"/></svg></div><h3><span data-i="f1.h">Music everywhere</span></h3><p><span data-i="f1.p">Cover art, controls and the player's own volume (Spotify and others), with the album color tinting the island.</span></p></div>
+      <div class="f rv" style="--c:var(--cpu)"><div class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="5" y="5" width="14" height="14" rx="2"/><path d="M9 1v4M15 1v4M9 19v4M15 19v4M1 9h4M1 15h4M19 9h4M19 15h4"/></svg></div><h3><span data-i="f2.h">Live system stats</span></h3><p><span data-i="f2.p">CPU and GPU usage and temperature, RAM, network and disks, with smooth bars that respond instantly.</span></p></div>
+      <div class="f rv" style="--c:var(--ram)"><div class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M6 12h4M8 10v4M15 13h.01M18 11h.01"/><rect x="2" y="6" width="20" height="12" rx="6"/></svg></div><h3><span data-i="f3.h">Real in-game FPS</span></h3><p><span data-i="f3.p">FPS counter with 1% lows, measured like professional overlays, right next to your music.</span></p></div>
+      <div class="f rv" style="--c:var(--wa)"><div class="ic"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 2a10 10 0 0 0-8.6 15.1L2 22l5-1.3A10 10 0 1 0 12 2zm5.3 14c-.2.6-1.3 1.2-1.8 1.2-.5.1-1 .2-3.4-.7-2.8-1.1-4.6-4-4.8-4.2-.1-.2-1.1-1.5-1.1-2.9s.7-2 1-2.3c.2-.3.5-.3.7-.3h.5c.2 0 .4 0 .6.5l.8 2c.1.2.1.4 0 .5l-.4.6-.3.4c-.1.1-.3.3-.1.6.1.3.7 1.1 1.4 1.8.9.9 1.7 1.1 2 1.3.3.1.4.1.6-.1l.8-1c.2-.3.4-.2.6-.1l1.9.9c.3.1.5.2.5.3.1.2.1.7-.1 1.3z"/></svg></div><h3><span data-i="f4.h">WhatsApp, Discord and Gmail</span></h3><p><span data-i="f4.p">Messages in one inbox, with photos and stickers. Reply to WhatsApp and Discord without leaving the island.</span></p></div>
+      <div class="f rv" style="--c:var(--gpu)"><div class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="3" width="8" height="18" rx="2"/><rect x="13" y="3" width="8" height="8" rx="2"/><rect x="13" y="13" width="8" height="8" rx="2"/></svg></div><h3><span data-i="f5.h">Home with widgets</span></h3><p><span data-i="f5.p">Resize, drag and build your Home with up to two large tiles. The island grows to fit everything.</span></p></div>
+      <div class="f rv" style="--c:var(--warm)"><div class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><circle cx="12" cy="12" r="4"/><path d="M12 2v2M12 20v2M4.9 4.9l1.4 1.4M17.7 17.7l1.4 1.4M2 12h2M20 12h2M4.9 19.1l1.4-1.4M17.7 6.3l1.4-1.4"/></svg></div><h3><span data-i="f6.h">Animated weather</span></h3><p><span data-i="f6.p">Animated sun, rain, snow and storms on the tile, with highs, lows and the next few hours.</span></p></div>
+      <div class="f rv" style="--c:#7dd3fc"><div class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M4 6h10M18 6h2M4 12h4M12 12h8M4 18h12M20 18h0"/><circle cx="16" cy="6" r="2"/><circle cx="10" cy="12" r="2"/><circle cx="18" cy="18" r="2"/></svg></div><h3><span data-i="f7.h">Quick controls</span></h3><p><span data-i="f7.p">Volume, brightness, Wi-Fi, Bluetooth, do not disturb, night light, airplane mode and lock screen.</span></p></div>
+      <div class="f rv" style="--c:#ff6b6b"><div class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="9"/><circle cx="12" cy="12" r="4" fill="currentColor"/></svg></div><h3><span data-i="f8.h">Screen recording</span></h3><p><span data-i="f8.p">Record up to 1440p at 60 fps, with PC audio and your mic, straight from the island.</span></p></div>
+      <div class="f rv" style="--c:#c4b5fd"><div class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="5" width="18" height="16" rx="2"/><path d="M3 10h18M8 3v4M16 3v4"/></svg></div><h3><span data-i="f9.h">Calendar and notes</span></h3><p><span data-i="f9.p">Events, Brazilian holidays and quick notes, always one hover away.</span></p></div>
+      <div class="f rv" style="--c:#e5e7eb"><div class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M4 8h16"/><path d="M6 14h3M11 14h3M16 14h2" opacity=".6"/></svg></div><h3><span data-i="f10.h">Minimal mark</span></h3><p><span data-i="f10.p">Prefer a clean screen? The island becomes a thin line with just the numbers, in the color you pick.</span></p></div>
+      <div class="f rv" style="--c:#fbbf24"><div class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M10.3 3.9 1.8 18a2 2 0 0 0 1.7 3h17a2 2 0 0 0 1.7-3L13.7 3.9a2 2 0 0 0-3.4 0zM12 9v4M12 17h.01"/></svg></div><h3><span data-i="f11.h">Alerts that matter</span></h3><p><span data-i="f11.p">High temperature, low battery, charger plugged in and even a reminder to drink water.</span></p></div>
+      <div class="f rv" style="--c:#a7f3d0"><div class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M12 2l3 7h7l-5.5 4.5L18 21l-6-4-6 4 1.5-7.5L2 9h7z"/></svg></div><h3><span data-i="f12.h">Your way</span></h3><p><span data-i="f12.p">Theme, transparency, 14 light effects, 18 sounds and which tabs show up. It hides by itself in full screen.</span></p></div>
     </div>
 
     <div class="closed">
-      <div class="cl rv"><img src="assets/fechada_musica.webp" alt="Ilha fechada com a música tocando" loading="lazy" width="1120" height="150"><div><b>Fechada, tocando música</b><span>Capa, controles e volume sem abrir nada.</span></div></div>
-      <div class="cl rv"><img src="assets/alerta_whatsapp.webp" alt="Aviso do WhatsApp na ilha fechada" loading="lazy" width="1120" height="150"><div><b>Chegou mensagem</b><span>Clique no aviso e o WhatsApp abre na conversa.</span></div></div>
-      <div class="cl rv"><img src="assets/fechada_jogo.webp" alt="Ilha fechada mostrando o FPS do jogo" loading="lazy" width="1120" height="150"><div><b>Jogando</b><span>FPS em tempo real ao lado da música.</span></div></div>
-      <div class="cl rv"><img src="assets/alerta_carregando.webp" alt="Aviso de carregador conectado" loading="lazy" width="1120" height="150"><div><b>Avisos rápidos</b><span>Aparecem, informam e saem do caminho.</span></div></div>
+      <div class="cl rv"><img src="assets/en/fechada_musica.webp" data-img="fechada_musica" alt="Closed island playing music" data-ia="alt:alt.fechada_musica" loading="lazy" width="1120" height="150"><div><b><span data-i="cl1.b">Closed, playing music</span></b><span><span data-i="cl1.s">Cover, controls and volume without opening anything.</span></span></div></div>
+      <div class="cl rv"><img src="assets/en/alerta_whatsapp.webp" data-img="alerta_whatsapp" alt="WhatsApp alert on the closed island" data-ia="alt:alt.alerta_whatsapp" loading="lazy" width="1120" height="150"><div><b><span data-i="cl2.b">New message</span></b><span><span data-i="cl2.s">Click the alert and the app opens on that chat (or Gmail, on the right email).</span></span></div></div>
+      <div class="cl rv"><img src="assets/en/fechada_jogo.webp" data-img="fechada_jogo" alt="Closed island showing the game's FPS" data-ia="alt:alt.fechada_jogo" loading="lazy" width="1120" height="150"><div><b><span data-i="cl3.b">Gaming</span></b><span><span data-i="cl3.s">Real-time FPS next to your music.</span></span></div></div>
+      <div class="cl rv"><img src="assets/en/alerta_carregando.webp" data-img="alerta_carregando" alt="Charger plugged-in alert with the battery level" data-ia="alt:alt.alerta_carregando" loading="lazy" width="1120" height="150"><div><b><span data-i="cl4.b">Charger and battery</span></b><span><span data-i="cl4.s">On laptops, the battery level stays on the island and it warns you when it's running out.</span></span></div></div>
     </div>
   </div>
 </section>
@@ -261,12 +321,12 @@ html.js .rv.in{opacity:1;transform:none}
 <section id="abas" style="background:var(--bg2);border-block:1px solid var(--line)">
   <div class="wrap">
     <div class="head rv">
-      <p class="kicker">Por dentro</p>
-      <h2>Uma aba para cada coisa.</h2>
-      <p class="sub">Abra a ilha e passe pelas abas. Escolha nas configurações quais delas aparecem.</p>
+      <p class="kicker"><span data-i="ab.k">Inside</span></p>
+      <h2><span data-i="ab.h">A tab for everything.</span></h2>
+      <p class="sub"><span data-i="ab.s">Open the island and go through the tabs. Pick in settings which ones show up.</span></p>
     </div>
     <div class="tour rv">
-      <div class="tabs" role="tablist" aria-label="Abas da ilha" id="tabs"></div>
+      <div class="tabs" role="tablist" aria-label="Island tabs" data-ia="aria-label:aria.3" id="tabs"></div>
       <div class="stage">
         <div class="im" id="tim"></div>
         <div class="cap" id="tcap" role="tabpanel" aria-live="polite"><h3></h3><p></p></div>
@@ -278,41 +338,99 @@ html.js .rv.in{opacity:1;transform:none}
 <section>
   <div class="wrap split">
     <div class="rv">
-      <p class="kicker">Novo na 1.3</p>
-      <h2>Sua Home, do seu tamanho.</h2>
-      <p class="sub">Segure um quadro e ele entra em edição, como os widgets do celular.</p>
+      <p class="kicker"><span data-i="n14.k">New in 1.4</span></p>
+      <h2><span data-i="n14.h">Your conversations, at a glance.</span></h2>
+      <p class="sub"><span data-i="n14.s">The Notifications tab is now an inbox: conversations on the left, messages on the right.</span></p>
       <ul>
-        <li style="--c:var(--cpu)"><span><b>Puxe pelos lados</b> para deixar o quadro largo, alto ou ocupando a Home inteira.</span></li>
-        <li style="--c:var(--gpu)"><span><b>Arraste</b> para trocar os quadros de lugar, com animação.</span></li>
-        <li style="--c:var(--ram)"><span><b>Quadros grandes mostram mais:</b> capa e controles da música, previsão das próximas horas.</span></li>
-        <li style="--c:var(--warm)"><span><b>O clima anima</b> conforme o tempo lá fora: sol, chuva, neve, tempestade.</span></li>
+        <li style="--c:var(--wa)"><span><span data-i="n14.1"><b>Reply from the island</b> to WhatsApp and Discord chats, just like in the Windows notification.</span></span></li>
+        <li style="--c:#5865f2"><span><span data-i="n14.2"><b>Discord and Gmail</b> arrive alongside WhatsApp, each with its own color, sound and effect.</span></span></li>
+        <li style="--c:#ea4335"><span><span data-i="n14.3"><b>Gmail opens the right email</b> when you click the alert or the message.</span></span></li>
+        <li style="--c:var(--ok,#22c55e)"><span><span data-i="n14.4"><b>Laptop battery</b> on the island, with a charging animation and low-battery alerts.</span></span></li>
       </ul>
     </div>
-    <div class="frame rv"><img src="assets/o_1home.webp" alt="Home com os quadros de música e clima aumentados" loading="lazy" width="1520" height="500"></div>
+    <div class="frame rv"><img src="assets/en/aba_ntf.webp" data-img="aba_ntf" alt="Notifications tab as an inbox, with a reply sent from the island" data-ia="alt:alt.aba_ntf" loading="lazy" width="2000" height="860"></div>
   </div>
 </section>
 
-<section id="leve" style="background:var(--bg2);border-block:1px solid var(--line)">
+<section style="background:var(--bg2);border-block:1px solid var(--line)">
+  <div class="wrap split">
+    <div class="rv">
+      <p class="kicker"><span data-i="hm.k">Home</span></p>
+      <h2><span data-i="hm.h">Your Home, your size.</span></h2>
+      <p class="sub"><span data-i="hm.s">Hold a tile to start editing, just like phone widgets.</span></p>
+      <ul>
+        <li style="--c:var(--cpu)"><span><span data-i="hm.1"><b>Pull the sides</b> to make a tile wide, tall or large. With two large tiles, the island gets wider.</span></span></li>
+        <li style="--c:var(--gpu)"><span><span data-i="hm.2"><b>Drag</b> to rearrange tiles, or drop them in the trash. Empty spots get a + to pick a tile.</span></span></li>
+        <li style="--c:var(--ram)"><span><span data-i="hm.3"><b>Large tiles show more:</b> cover and music controls, forecast for the next few hours.</span></span></li>
+        <li style="--c:var(--warm)"><span><span data-i="hm.4"><b>The weather animates</b> with the conditions outside: sun, rain, snow, storms.</span></span></li>
+      </ul>
+    </div>
+    <div class="frame rv"><img src="assets/en/o_1home.webp" data-img="o_1home" alt="Home with large music and weather tiles" data-ia="alt:alt.o_1home" loading="lazy" width="1520" height="500"></div>
+  </div>
+</section>
+
+<section id="temas">
   <div class="wrap">
     <div class="head rv">
-      <p class="kicker">Leveza</p>
-      <h2>Feita para não atrapalhar o jogo.</h2>
-      <p class="sub">As leituras do sistema rodam num auxiliar nativo e as animações vão para a placa de vídeo. O processador fica livre para o que importa.</p>
+      <p class="kicker"><span data-i="tm.k">Themes</span></p>
+      <h2><span data-i="tm.h">Dark, light or glass.</span></h2>
+      <p class="sub"><span data-i="tm.s">Pick the look that matches your Windows. On Automatic, the island follows the system's light or dark mode.</span></p>
+    </div>
+    <div class="themes">
+      <figure class="th rv"><img src="assets/en/tema_dark.webp" data-img="tema_dark" alt="Island open in the Dark theme" data-ia="alt:alt.tema_dark" loading="lazy" width="1600" height="512"><figcaption><b><span data-i="tm.d">Dark</span></b><span><span data-i="tm.ds">The classic: deep black that blends into the top of the screen and lets album colors stand out.</span></span></figcaption></figure>
+      <figure class="th rv"><img src="assets/en/tema_light.webp" data-img="tema_light" alt="Island open in the Light theme" data-ia="alt:alt.tema_light" loading="lazy" width="1600" height="512"><figcaption><b><span data-i="tm.l">Light</span></b><span><span data-i="tm.ls">Clean white with dark text, for those using Windows in light mode.</span></span></figcaption></figure>
+      <figure class="th rv"><img src="assets/en/tema_glass.webp" data-img="tema_glass" alt="Island open in the translucent Crystal theme" data-ia="alt:alt.tema_glass" loading="lazy" width="1600" height="512"><figcaption><b><span data-i="tm.c">Crystal</span></b><span><span data-i="tm.cs">Translucent, with a soft blur of what's behind. Your wallpaper shows through the island.</span></span></figcaption></figure>
+    </div>
+    <ul class="thx rv">
+      <li><span data-i="tm.x1"><b>Automatic</b> follows the Windows theme</span></li>
+      <li><span data-i="tm.x2"><b>Accent color</b> for buttons and tabs, with automatic contrast</span></li>
+      <li><span data-i="tm.x3">Adjustable background <b>transparency</b></span></li>
+      <li><span data-i="tm.x4"><b>Color and light effect</b> for each alert type</span></li>
+    </ul>
+  </div>
+</section>
+
+<section id="discreto">
+  <div class="wrap">
+    <div class="head rv">
+      <p class="kicker"><span data-i="mk.k">Minimal mark</span></p>
+      <h2><span data-i="mk.h">Just the numbers, over your game.</span></h2>
+      <p class="sub"><span data-i="mk.s">Turn on the minimal mark and the island becomes a thin line at the top, with FPS, usage and temperatures in a small panel. Outside games, it shows the song that's playing.</span></p>
+    </div>
+    <figure class="gp rv">
+      <div class="gps"><canvas id="gpc" aria-hidden="true"></canvas><img class="mk" id="mkimg" src="assets/mark/g0.webp" alt="Island in minimal mode over a racing game, showing FPS, CPU, GPU and RAM" data-ia="alt:alt.mk" width="1200" height="120"></div>
+      <figcaption><span class="gpt" role="group" aria-label="Choose what the minimal mark shows" data-ia="aria-label:aria.mk"><button type="button" data-m="g" aria-pressed="true"><span data-i="mk.g">Gaming</span></button><button type="button" data-m="m" aria-pressed="false"><span data-i="mk.m">Listening to music</span></button></span><small><span data-i="mk.cap">Sample game, made just for this demo.</span></small></figcaption>
+    </figure>
+    <ul class="thx rv">
+      <li><span data-i="mk.1"><b>Live FPS</b> while you play</span></li>
+      <li><span data-i="mk.2"><b>CPU, GPU and RAM</b> with temperatures</span></li>
+      <li><span data-i="mk.3"><b>Text color</b> of your choice</span></li>
+      <li><span data-i="mk.4"><b>Hover</b> and the island opens as usual</span></li>
+    </ul>
+  </div>
+</section>
+
+<section id="leve">
+  <div class="wrap">
+    <div class="head rv">
+      <p class="kicker"><span data-i="lv.k">Lightweight</span></p>
+      <h2><span data-i="lv.h">Built to stay out of your game's way.</span></h2>
+      <p class="sub"><span data-i="lv.s">System readings run in a native helper and animations go to the graphics card. Your CPU stays free for what matters.</span></p>
     </div>
     <div class="light" id="meters">
-      <div class="m rv"><div class="v">0,4<small>%</small></div><div class="l">de CPU com a ilha fechada<br>1,2% tocando música</div><div class="bar"><i style="--c:var(--cpu);--w:4%"></i></div></div>
-      <div class="m rv"><div class="v">~140<small>MB</small></div><div class="l">de RAM no uso do dia a dia,<br>somando todos os processos</div><div class="bar"><i style="--c:var(--ram);--w:14%"></i></div></div>
-      <div class="m rv"><div class="v">50<small>%</small></div><div class="l">menos CPU que a versão 1.2,<br>com os picos 3× menores</div><div class="bar"><i style="--c:var(--gpu);--w:50%"></i></div></div>
+      <div class="m rv"><div class="v">0,4<small>%</small></div><div class="l"><span data-i="lv.1">CPU with the island closed<br>1.2% while playing music</span></div><div class="bar"><i style="--c:var(--cpu);--w:4%"></i></div></div>
+      <div class="m rv"><div class="v">~140<small>MB</small></div><div class="l"><span data-i="lv.2">of RAM in everyday use,<br>all processes combined</span></div><div class="bar"><i style="--c:var(--ram);--w:14%"></i></div></div>
+      <div class="m rv"><div class="v">50<small>%</small></div><div class="l"><span data-i="lv.3">less CPU than version 1.2,<br>with 3× smaller spikes</span></div><div class="bar"><i style="--c:var(--gpu);--w:50%"></i></div></div>
     </div>
-    <p class="note rv">Medido num Intel Core i7-9700KF com RTX 5070, Windows 11, pelo registro de desempenho da própria ilha. Em tela cheia, a ilha se esconde.</p>
+    <p class="note rv"><span data-i="lv.n">Measured on an Intel Core i7-9700KF with an RTX 5070, Windows 11, using the island's own performance log. In full screen, the island hides.</span></p>
   </div>
 </section>
 
 <section id="novidades">
   <div class="wrap">
     <div class="head rv">
-      <p class="kicker">Novidades</p>
-      <h2>O que mudou.</h2>
+      <p class="kicker"><span data-i="nv.k">What's new</span></p>
+      <h2><span data-i="nv.h">What changed.</span></h2>
     </div>
     <div class="log" id="log"></div>
   </div>
@@ -322,11 +440,11 @@ html.js .rv.in{opacity:1;transform:none}
   <div class="wrap">
     <div class="dl rv">
       <img class="app" src="assets/icon-180.png" alt="">
-      <h2>Baixe a KOI Island.</h2>
-      <p class="sub" style="margin:0 auto">Versão <b data-ver>1.3.0 (Beta)</b> · <span data-date>7 de novembro de 2026</span> · Windows 10 e 11 (64 bits)</p>
+      <h2><span data-i="dl.h">Download KOI Island.</span></h2>
+      <p class="sub" style="margin:0 auto"><span data-i="dl.v">Version </span><b data-ver>1.4.0</b> · <span data-date>7 de novembro de 2026</span><span data-i="dl.os"> · Windows 10 and 11 (64-bit)</span></p>
       <div class="opts">
-        <a class="opt main" data-dl="setup" href="#"><b>Instalador <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3v12m0 0-5-5m5 5 5-5M5 21h14"/></svg></b><span>Recomendado · abre com o Windows · <span data-size="setup">72 MB</span></span></a>
-        <a class="opt" data-dl="portable" href="#"><b>Portátil <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3v12m0 0-5-5m5 5 5-5M5 21h14"/></svg></b><span>Sem instalar, roda de qualquer pasta · <span data-size="portable">72 MB</span></span></a>
+        <a class="opt main" data-dl="setup" href="#"><b><span data-i="dl.setup">Installer </span><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3v12m0 0-5-5m5 5 5-5M5 21h14"/></svg></b><span><span data-i="dl.setups">Recommended · starts with Windows · </span><span data-size="setup">72 MB</span></span></a>
+        <a class="opt" data-dl="portable" href="#"><b><span data-i="dl.port">Portable </span><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3v12m0 0-5-5m5 5 5-5M5 21h14"/></svg></b><span><span data-i="dl.ports">No install, runs from any folder · </span><span data-size="portable">72 MB</span></span></a>
       </div>
       <p class="sha" id="sha"></p>
     </div>
@@ -336,18 +454,18 @@ html.js .rv.in{opacity:1;transform:none}
 <section id="perguntas">
   <div class="wrap">
     <div class="head rv">
-      <p class="kicker">Perguntas</p>
-      <h2>Dúvidas comuns.</h2>
+      <p class="kicker"><span data-i="fq.k">FAQ</span></p>
+      <h2><span data-i="fq.h">Common questions.</span></h2>
     </div>
     <div class="faq">
-      <details class="rv"><summary>Quanto custa?</summary><p>Nada. A KOI Island é grátis, sem anúncios e sem conta.</p></details>
-      <details class="rv"><summary>O Windows mostrou um aviso azul ao abrir o instalador. É seguro?</summary><p>É o SmartScreen, que aparece para programas novos sem assinatura digital paga. Clique em <b>Mais informações</b> e depois em <b>Executar assim mesmo</b>. Se quiser conferir o arquivo, compare o código SHA-256 mostrado acima com o do arquivo baixado.</p></details>
-      <details class="rv"><summary>Por que ela pede para rodar como administrador?</summary><p>Só o contador de FPS e a temperatura do processador precisam disso, porque leem informações protegidas do Windows. Sem administrador, todo o resto funciona normalmente.</p></details>
-      <details class="rv"><summary>Atrapalha o desempenho nos jogos?</summary><p>Não deve. Ela usa menos de 1% do processador, se esconde quando um jogo ou vídeo está em tela cheia e só liga o contador de FPS quando você está jogando.</p></details>
-      <details class="rv"><summary>Meus dados saem do computador?</summary><p>Não. Tudo é lido e fica no seu PC, inclusive as mensagens do WhatsApp. A ilha só busca na internet a previsão do tempo, os feriados e capas e letras de músicas.</p></details>
-      <details class="rv"><summary>Instalador ou portátil?</summary><p>O instalador cria atalho, abre junto com o Windows e é o melhor para o dia a dia. O portátil roda de qualquer pasta, sem instalar, bom para testar.</p></details>
-      <details class="rv"><summary>Como atualizo para uma versão nova?</summary><p>Baixe o instalador novo nesta página e abra. Ele instala por cima e suas configurações, notas e tamanhos dos quadros continuam iguais.</p></details>
-      <details class="rv"><summary>Funciona com dois monitores?</summary><p>Sim. A ilha fica no monitor principal do Windows.</p></details>
+      <details class="rv"><summary><span data-i="q1">How much does it cost?</span></summary><p><span data-i="a1">Nothing. KOI Island is free, with no ads and no account.</span></p></details>
+      <details class="rv"><summary><span data-i="q2">Windows showed a blue warning when I opened the installer. Is it safe?</span></summary><p><span data-i="a2">That's SmartScreen, which shows up for new programs without a paid digital signature. Click <b>More info</b> and then <b>Run anyway</b>. To check the file, compare the SHA-256 code shown below the download buttons.</span></p></details>
+      <details class="rv"><summary><span data-i="q3">Why does it ask to run as administrator?</span></summary><p><span data-i="a3">Only the FPS counter and CPU temperature need it, because they read protected Windows information. Without admin, everything else works normally.</span></p></details>
+      <details class="rv"><summary><span data-i="q4">Does it hurt gaming performance?</span></summary><p><span data-i="a4">It shouldn't. It uses less than 1% of the CPU, hides when a game or video is in full screen and only turns on the FPS counter while you're playing.</span></p></details>
+      <details class="rv"><summary><span data-i="q5">Does my data leave my computer?</span></summary><p><span data-i="a5">No. Everything is read and stays on your PC, including WhatsApp messages. The island only goes online for the weather forecast, holidays, and album covers and lyrics.</span></p></details>
+      <details class="rv"><summary><span data-i="q6">Installer or portable?</span></summary><p><span data-i="a6">The installer creates a shortcut, starts with Windows and is best for everyday use. The portable version runs from any folder without installing, good for trying it out.</span></p></details>
+      <details class="rv"><summary><span data-i="q7">How do I update to a new version?</span></summary><p><span data-i="a7">The island tells you when a new version is out. In Settings › About, click <b>Update now</b>: it downloads, installs and reopens, and your settings, notes and tiles stay the same.</span></p></details>
+      <details class="rv"><summary><span data-i="q8">Does it work with two monitors?</span></summary><p><span data-i="a8">Yes. The island sits on your main Windows display.</span></p></details>
     </div>
   </div>
 </section>
@@ -356,29 +474,37 @@ html.js .rv.in{opacity:1;transform:none}
 <footer>
   <div class="wrap">
     <a class="logo" href="#top"><img src="assets/icon-64.png" alt="">KOI Island</a>
-    <span>Versão <span data-ver>1.3.0 (Beta)</span></span>
+    <span><span data-i="ft.v">Version </span><span data-ver>1.4.0</span></span>
     <a id="gh" href="#">GitHub</a>
-    <a id="rel" href="#">Todas as versões</a>
-    <span class="sp">Não é afiliada à Apple. Fonte Geist sob licença <a href="assets/Geist-OFL.txt">OFL</a>.</span>
+    <a id="rel" href="#"><span data-i="ft.all">All versions</span></a>
+    <span class="sp"><span data-i="ft.aff">Not affiliated with Apple. Geist font under the <a href="assets/Geist-OFL.txt">OFL</a> license.</span></span>
   </div>
 </footer>
 
+<script src="l10n.js"></script>
 <script>
 /* Versão, downloads e novidades vêm do latest.json (o mesmo arquivo que a ilha lê para saber se tem atualização). */
-const FALLBACK={"repo":"","version":"1.3.0-beta","label":"1.3.0 (Beta)","tag":"v1.3.0-beta","date":"2026-11-07","tagline":"Widgets na Home, clima animado e metade do uso de CPU",
- "setup":{"file":"KOI-Island-Setup-1.3.0-beta.exe","size":74928302,"sha256":""},"portable":{"file":"KOI-Island-1.3.0-beta-portable.exe","size":74901310,"sha256":""},"changelog":[]};
+const FALLBACK={"version": "1.4.0", "label": "1.4.0", "tag": "v1.4.0", "date": "2026-11-08", "tagline": "Responda WhatsApp e Discord pela ilha, bateria de notebook, inglês como padrão e novos efeitos", "setup": {"file": "KOI-Island-Setup-1.4.0.exe", "size": 74953913, "sha256": "7ce39023bab32995f3b93ada1cbdaac0e3bee6c285828491a06b977e10699e40"}, "portable": {"file": "KOI-Island-1.4.0-portable.exe", "size": 74938488, "sha256": "ad4f9dbc0aec71d8af255b137f608c4ac49f608f20a6bde5c1c7ce9d4ce7c68e"}, "changelog": [{"version": "1.4.0", "date": "2026-11-08", "items": ["Notificações em formato de caixa de entrada, com WhatsApp, Discord e Gmail", "Responder WhatsApp e Discord direto pela ilha (experimental)", "Gmail abre o e-mail certo ao clicar no aviso", "Home com até dois quadros grandes: a ilha se ajusta, editor visual nas Configurações e quadros vazios com +", "Nome da música passando em todos os lugares onde aparece, inclusive com a ilha fechada", "Nível da bateria em notebooks, com animação ao carregar e aviso de bateria fraca", "6 efeitos de luz e 11 sons novos, com Batimento e Piscar refeitos", "Curvas do topo sem o fio de 1 pixel em telas com escala", "Alerta de queda de FPS removido", "Inglês passa a ser o idioma padrão (quem já usava a ilha continua no idioma de antes)", "Traduções completas em inglês, espanhol, francês, alemão e italiano para as novidades recentes", "Quadro Gravação da Home grava direto e escolhe o som do PC e o microfone", "Notificações com a logo do app no lugar das iniciais", "Clima sem cidade fixa de fábrica: até você escolher a sua, mostra uma cidade sorteada", "Nomes longos de dispositivos cabem no quadro de gravação"]}, {"version": "1.3.0 (Beta)", "date": "2026-11-07", "items": ["A ilha avisa quando sair versão nova e se atualiza com um clique", "Quadros da Home redimensionáveis pelos lados e arrastáveis, com animação", "Quadros grandes mostram mais: capa e controles da música, previsão das próximas horas", "Clima animado conforme o tempo: sol, chuva, neve, tempestade, neblina e noite", "Controles de música em qualquer estado da ilha fechada, com a cor do álbum", "Aba Notificações maior, com mais espaço e barra de rolagem nova", "Metade do uso de CPU da versão 1.2 e menos memória", "Volume do Windows e do Spotify mais confiáveis (inclusive com Voicemeeter)", "Bordas da ilha sem a emenda de 1 pixel no topo"]}, {"version": "1.2.1", "date": "2026-11-02", "items": ["Temperatura do processador lida pelo driver PawnIO", "Auxiliar nativo no lugar do PowerShell: muito menos processador", "Animações aceleradas pela placa de vídeo", "FPS só é medido quando um jogo está aberto, com opção de deixar sempre ligado", "Marca discreta com temperatura, FPS e cor do texto à escolha", "Clique no aviso do WhatsApp abre o app sem abrir a ilha"]}], "repo": ""};
 const $=(s,r=document)=>r.querySelector(s),$$=(s,r=document)=>[...r.querySelectorAll(s)];
+/* idiomas: inglês por padrão; a escolha fica salva neste navegador (ou ?lang=pt no endereço) */
+const LS=["en","pt","es","fr","de","it"],LOCALE={en:"en-US",pt:"pt-BR",es:"es-ES",fr:"fr-FR",de:"de-DE",it:"it-IT"};
+let LG=(()=>{let l=new URLSearchParams(location.search).get("lang");try{l=l||localStorage.getItem("koi.site.lang")}catch(e){}return LS.includes(l)?l:"en"})();
+const EN={};$$("[data-i]").forEach(e=>EN[e.dataset.i]=e.innerHTML);$$("[data-ia]").forEach(e=>{const [a,k]=e.dataset.ia.split(":");EN[k]=e.getAttribute(a)});EN.desc=($('meta[name=description]')||{}).content;
+const tx=k=>LG==="en"?EN[k]:((L10N.I18N[LG]||{})[k]??EN[k]);
+const U=k=>L10N.UI[k][LG]||L10N.UI[k].en;
+const RE=[];   // partes que se redesenham ao trocar o idioma
+let J=null;
 const esc=s=>String(s??"").replace(/[&<>"]/g,c=>({"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;"}[c]));
 const mb=b=>b?Math.round(b/1048576)+" MB":"";
-const dt=s=>{try{return new Date(s+"T12:00:00").toLocaleDateString("pt-BR",{day:"numeric",month:"long",year:"numeric"})}catch(e){return s}};
+const dt=s=>{try{return new Date(s+"T12:00:00").toLocaleDateString(LOCALE[LG],{day:"numeric",month:"long",year:"numeric"})}catch(e){return s}};
 /* repositório: no GitHub Pages sai do endereço (usuario.github.io/repositorio); senão, do campo "repo" do latest.json */
 function repoOf(j){if(j.repo&&/^[\w.-]+\/[\w.-]+$/.test(j.repo))return j.repo;const h=location.hostname;
  if(h.endsWith(".github.io")){const u=h.split(".")[0],p=location.pathname.split("/").filter(Boolean)[0];return u+"/"+(p||h)}return ""}
-function apply(j){
+function apply(j){J=j;
  const repo=repoOf(j),base=repo?"https://github.com/"+repo:"";
  const lbl=j.label||j.version,tag=j.tag||("v"+j.version);
  $$("[data-ver]").forEach(e=>e.textContent=(e.tagName==="B"&&e.closest(".pill")?"v":"")+lbl);
- if(j.tagline)$("[data-tag]").textContent=j.tagline;
+ $("[data-tag]").textContent=L10N.TAG[LG]||j.tagline||"";
  $$("[data-date]").forEach(e=>e.textContent=dt(j.date));
  for(const k of ["setup","portable"]){const a=j[k];if(!a)continue;
   const url=a.url||(base?base+"/releases/download/"+tag+"/"+a.file:"");
@@ -386,38 +512,127 @@ function apply(j){
   $$('[data-size="'+k+'"]').forEach(e=>e.textContent=mb(a.size))}
  $("[data-size]:not([data-size=setup]):not([data-size=portable])").textContent=mb(j.setup&&j.setup.size);
  const h=$$('.cta [data-dl]');h.forEach(e=>{if(!base)e.href="#baixar"});
- $("#sha").innerHTML=j.setup&&j.setup.sha256?"SHA-256 do instalador: "+esc(j.setup.sha256):"";
- if(base){$("#gh").href=base;$("#rel").href=base+"/releases"}else{$("#gh").remove();$("#rel").remove()}
+ $("#sha").innerHTML=j.setup&&j.setup.sha256?esc(U("sha"))+esc(j.setup.sha256):"";
+ if(base){$("#gh").href=base;$("#rel").href=base+"/releases"}else{$$("#gh,#rel").forEach(e=>e.remove())}
  const L=(j.changelog||[]);
- $("#log").innerHTML=L.map((r,i)=>'<article class="rel rv in"><div><h3>'+esc(r.version)+(i===0?'<span class="new">Atual</span>':"")+'</h3><time datetime="'+esc(r.date)+'">'+esc(dt(r.date))+'</time></div><ul>'+(r.items||[]).map(x=>"<li>"+esc(x)+"</li>").join("")+"</ul></article>").join("")||'<p class="sub">Sem novidades registradas.</p>';
+ $("#log").innerHTML=L.map((r,i)=>'<article class="rel rv in"><div><h3>'+esc(r.version)+(i===0?'<span class="new">'+esc(U("cur"))+'</span>':"")+'</h3><time datetime="'+esc(r.date)+'">'+esc(dt(r.date))+'</time></div><ul>'+((L10N.CL[r.version]||{})[LG]||r.items||[]).map(x=>"<li>"+esc(x)+"</li>").join("")+"</ul></article>").join("")||'<p class="sub">'+esc(U("none"))+'</p>';
 }
 fetch("latest.json",{cache:"no-store"}).then(r=>r.ok?r.json():Promise.reject()).then(apply).catch(()=>apply(FALLBACK));
 
 /* tela da abertura: troca sozinha a cada 3,5 s; os botões escolhem */
-(()=>{const im=$$("#hv img"),bt=$$(".states button");let i=0,t;
- const go=n=>{i=(n+im.length)%im.length;im.forEach((x,k)=>x.classList.toggle("on",k===i));bt.forEach((b,k)=>b.setAttribute("aria-pressed",k===i))};
- const auto=()=>{clearInterval(t);if(!matchMedia("(prefers-reduced-motion: reduce)").matches)t=setInterval(()=>go(i+1),3500)};
- bt.forEach((b,k)=>b.onclick=()=>{go(k);auto()});auto();
- document.addEventListener("visibilitychange",()=>{if(document.hidden)clearInterval(t);else auto()})})();
+(()=>{const im=$$("#hv img"),cur=$("#hcur"),bt=$$(".states button[data-f]"),pl=$(".states .play");
+ /* demonstração: o cursor vai até a função, clica e a ilha muda (posições medidas na própria ilha) */
+let AT=L10N.AT[LG]||[[50, 3.83], [43.51, 5.11], [30.38, 5.11], [82.22, 61.06], [42.08, 5.11], [55.19, 5.11], [50, 92]];
+ let i=0,t=0,run=!matchMedia("(prefers-reduced-motion: reduce)").matches,seen=true;
+ const show=n=>{i=(n+im.length)%im.length;im.forEach((x,k)=>x.classList.toggle("on",k===i));const f=i===4?3:i===0?-1:i;bt.forEach(b=>b.setAttribute("aria-pressed",String(+b.dataset.f===f)))};
+ const put=a=>{cur.style.left=a[0]+"%";cur.style.top=a[1]+"%"};
+ const wait=ms=>new Promise(r=>{t=setTimeout(r,ms)});
+ let gen=0;
+ async function loop(){const g=++gen;
+  while(run&&g===gen){
+   await wait(i===0?1400:1700);if(!run||g!==gen)return;
+   const a=AT[i];put(a);await wait(950);if(!run||g!==gen)return;
+   if(i!==0&&i!==6){cur.classList.add("down");await wait(120);cur.classList.remove("down");cur.classList.remove("click");void cur.offsetWidth;cur.classList.add("click")}
+   await wait(i===0?350:180);if(!run||g!==gen)return;
+   show(i+1);if(i===0)put([50,60])}}
+ const stop=()=>{run=false;gen++;clearTimeout(t);pl.textContent="▶";pl.setAttribute("aria-label",U("play"));pl.setAttribute("aria-pressed","false")};
+ const go=()=>{if(!seen)return;run=true;pl.textContent="❚❚";pl.setAttribute("aria-label",U("pause"));pl.setAttribute("aria-pressed","true");loop()};
+ bt.forEach(b=>b.onclick=()=>{stop();show(+b.dataset.f);put(AT[+b.dataset.f-1]||[50,60])});
+ pl.onclick=()=>{if(run)stop();else go()};
+ RE.push(()=>{AT=L10N.AT[LG]||AT;pl.setAttribute("aria-label",U(run?"pause":"play"))});
+ put([50,60]);show(0);
+ if(!run){show(1);stop()}else{const io=new IntersectionObserver(es=>{seen=es[0].isIntersecting;if(!seen){gen++;clearTimeout(t)}else if(run)loop()});io.observe($("#hv"))}
+ document.addEventListener("visibilitychange",()=>{if(document.hidden){gen++;clearTimeout(t)}else if(run&&seen)loop()})})();
 
 /* abas da ilha */
-(()=>{const T=[
- ["home","Home","Data, próximo compromisso e quatro quadros que você monta do seu jeito."],
- ["mus","Música","Capa grande, linha do tempo, letra da música e o volume do próprio app."],
- ["mon","Sistema","CPU, GPU e RAM com temperatura, velocidade da internet e espaço dos discos."],
- ["ntf","Notificações","As mensagens do WhatsApp agrupadas por conversa, e o status do carregador."],
- ["ctl","Controle","Volume, brilho e os botões que você mais usa, sem abrir as configurações do Windows."],
- ["cal","Calendário","Mês inteiro com feriados do Brasil. Arraste sobre os dias para marcar um período."],
- ["rec","Gravação","Grave a tela em até 1440p a 60 fps, com som do PC e microfone, escolhendo a saída de áudio."],
- ["nts","Notas","Anotações rápidas que ficam salvas no seu PC."]];
+(()=>{const K=["home","mus","mon","ntf","ctl","cal","rec","nts"];let T;
  const tb=$("#tabs"),im=$("#tim"),cap=$("#tcap");
+ let cur=0;function build(){T=K.map((k,i)=>[k].concat(L10N.TABS[LG][i]));
  tb.innerHTML=T.map((t,i)=>'<button type="button" role="tab" id="t-'+t[0]+'" aria-selected="'+(i===0)+'" tabindex="'+(i?-1:0)+'"><i>0'+(i+1)+'</i>'+t[1]+"</button>").join("");
- im.innerHTML=T.map((t,i)=>'<img src="assets/aba_'+t[0]+'.webp" alt="Aba '+t[1]+' da ilha" loading="lazy" class="'+(i?"":"on")+'">').join("");
- const bs=$$("button",tb),is=$$("img",im);
- const go=n=>{bs.forEach((b,k)=>{b.setAttribute("aria-selected",k===n);b.tabIndex=k===n?0:-1});is.forEach((x,k)=>x.classList.toggle("on",k===n));$("h3",cap).textContent=T[n][1];$("p",cap).textContent=T[n][2]};
- bs.forEach((b,k)=>{b.onclick=()=>go(k);b.onkeydown=e=>{const d=e.key==="ArrowDown"||e.key==="ArrowRight"?1:e.key==="ArrowUp"||e.key==="ArrowLeft"?-1:0;if(d){e.preventDefault();const n=(k+d+bs.length)%bs.length;go(n);bs[n].focus()}}});
- go(0)})();
+ im.innerHTML=T.map((t,i)=>'<img src="assets/'+LG+'/aba_'+t[0]+'.webp" alt="'+esc(U("tabalt").replace("{t}",t[1]))+'" loading="lazy" class="'+(i===cur?"on":"")+'">').join("");
+ bs=$$("button",tb);is=$$("img",im);
+ bs.forEach((b,k)=>{b.onclick=()=>go(k);b.onkeydown=e=>{const d=e.key==="ArrowDown"||e.key==="ArrowRight"?1:e.key==="ArrowUp"||e.key==="ArrowLeft"?-1:0;if(d){e.preventDefault();const n=(k+d+bs.length)%bs.length;go(n);bs[n].focus()}}});go(cur)}
+ let bs=[],is=[];
+ const go=n=>{cur=n;bs.forEach((b,k)=>{b.setAttribute("aria-selected",k===n);b.tabIndex=k===n?0:-1});is.forEach((x,k)=>x.classList.toggle("on",k===n));$("h3",cap).textContent=T[n][1];$("p",cap).textContent=T[n][2]};
+ RE.push(build);build()})();
+/* troca de idioma */
+function setLang(l,save){LG=LS.includes(l)?l:"en";if(save){try{localStorage.setItem("koi.site.lang",LG)}catch(e){}}
+ document.documentElement.lang=LOCALE[LG].startsWith("pt")?"pt-BR":LG;
+ $$("[data-i]").forEach(e=>{const v=tx(e.dataset.i);if(v!=null&&e.innerHTML!==v)e.innerHTML=v});
+ $$("[data-ia]").forEach(e=>{const [a,k]=e.dataset.ia.split(":"),v=tx(k);if(v!=null)e.setAttribute(a,v)});
+ $$("img[data-img]").forEach(e=>{const u="assets/"+LG+"/"+e.dataset.img+".webp";if(e.getAttribute("src")!==u)e.setAttribute("src",u)});
+ const md=$('meta[name=description]');if(md)md.content=tx("desc");
+ const nm={en:"English",pt:"Português",es:"Español",fr:"Français",de:"Deutsch",it:"Italiano"};
+ $(".lcur").textContent=nm[LG];$(".lcode").textContent=LG.toUpperCase();$("#lang").setAttribute("aria-label",tx("lang.lbl")+": "+nm[LG]);$("#lmenu").setAttribute("aria-label",tx("lang.lbl"));
+ $$("#lmenu li").forEach(li=>li.setAttribute("aria-selected",String(li.dataset.l===LG)));
+ if(J)apply(J);RE.forEach(f=>f())}
+/* menu de idiomas: abre no clique, setas para navegar, Enter escolhe, Esc fecha */
+(()=>{const b=$("#lang"),w=$("#lmw"),m=$("#lmenu"),it=()=>$$("li",m);
+ const open=()=>{w.hidden=false;b.setAttribute("aria-expanded","true");(it().find(x=>x.dataset.l===LG)||it()[0]).focus()};
+ const close=f=>{if(w.hidden)return;w.hidden=true;b.setAttribute("aria-expanded","false");if(f)b.focus()};
+ b.onclick=()=>w.hidden?open():close();
+ b.onkeydown=e=>{if(e.key==="ArrowDown"||e.key==="ArrowUp"){e.preventDefault();open()}};
+ m.onclick=e=>{const li=e.target.closest("li");if(!li)return;setLang(li.dataset.l,true);close(true)};
+ m.onkeydown=e=>{const a=it(),i=a.indexOf(document.activeElement);
+  if(e.key==="ArrowDown"||e.key==="ArrowUp"){e.preventDefault();a[(i+(e.key==="ArrowDown"?1:-1)+a.length)%a.length].focus()}
+  else if(e.key==="Home"||e.key==="End"){e.preventDefault();a[e.key==="Home"?0:a.length-1].focus()}
+  else if(e.key==="Enter"||e.key===" "){e.preventDefault();if(i>=0){setLang(a[i].dataset.l,true);close(true)}}
+  else if(e.key==="Escape"||e.key==="Tab")close(e.key==="Escape")};
+ document.addEventListener("pointerdown",e=>{if(!$("#lsel").contains(e.target))close(false)})})();
+setLang(LG,false);
 
+/* modo discreto: corrida de exemplo (desenhada aqui, sem jogo de verdade) com a ilha discreta por cima */
+(()=>{const cv=$("#gpc"),img=$("#mkimg");if(!cv)return;const x=cv.getContext("2d");
+ const still=matchMedia("(prefers-reduced-motion: reduce)").matches;let W=0,H=0,dpr=1,raf=0,vis=false,t0=performance.now(),mode="g",fi=0,ft=0;
+ const G=[...Array(8)].map((_,i)=>"assets/mark/g"+i+".webp");G.concat(["assets/mark/m0.webp"]).forEach(u=>{const i=new Image();i.src=u});
+ const stars=[...Array(70)].map(()=>[Math.random(),Math.random()*.5,Math.random()*1.4+.3,Math.random()*6]);
+ const mt=(seed,n)=>[...Array(n+1)].map((_,i)=>{const v=Math.sin(i*1.7+seed)*.5+Math.sin(i*.63+seed*2)*.35+Math.sin(i*3.1+seed)*.15;return v});
+ const M1=mt(1,24),M2=mt(4,18);
+ function size(){const r=cv.getBoundingClientRect();dpr=Math.min(2,devicePixelRatio||1);W=Math.round(r.width*dpr);H=Math.round(r.height*dpr);cv.width=W;cv.height=H}
+ function draw(now){const t=(now-t0)/1000,hz=H*.5;
+  let g=x.createLinearGradient(0,0,0,hz);g.addColorStop(0,"#07041a");g.addColorStop(.55,"#2a0c4e");g.addColorStop(1,"#ff4d8d");x.fillStyle=g;x.fillRect(0,0,W,hz+1);
+  for(const s of stars){x.globalAlpha=.35+.35*Math.sin(t*1.5+s[3]);x.fillStyle="#fff";x.fillRect(s[0]*W,s[1]*hz,s[2]*dpr,s[2]*dpr)}x.globalAlpha=1;
+  const sr=H*.17,sx=W*.5,sy=hz-H*.05;g=x.createLinearGradient(0,sy-sr,0,sy+sr);g.addColorStop(0,"#ffe66d");g.addColorStop(.55,"#ff8a5c");g.addColorStop(1,"#ff3d7f");
+  x.save();x.beginPath();x.arc(sx,sy,sr,0,Math.PI*2);x.clip();x.fillStyle=g;x.fillRect(sx-sr,sy-sr,sr*2,sr*2);
+  for(let i=0;i<7;i++){const yy=sy+sr*(.08+i*.13)+((t*12*dpr)%(sr*.13));x.fillStyle="#3b0d56";x.fillRect(sx-sr,yy,sr*2,sr*.025*(i+1))}x.restore();
+  const mtn=(P,col,amp,base,off)=>{x.beginPath();x.moveTo(0,hz);const n=P.length-1;for(let i=0;i<=n;i++){const px=((i/n)*W*1.3-off%(W*.3)),py=base-amp*(.55+.45*P[i]);x.lineTo(px,py)}x.lineTo(W*1.3,hz);x.closePath();x.fillStyle=col;x.fill()};
+  mtn(M2,"#3a1060",H*.13,hz,t*6*dpr);mtn(M1,"#1d0736",H*.09,hz,t*14*dpr);
+  x.strokeStyle="rgba(255,77,141,.6)";x.lineWidth=1*dpr;x.beginPath();x.moveTo(0,hz);x.lineTo(W,hz);x.stroke();
+  g=x.createLinearGradient(0,hz,0,H);g.addColorStop(0,"#1a0533");g.addColorStop(1,"#07020f");x.fillStyle=g;x.fillRect(0,hz,W,H-hz);
+  const sway=Math.sin(t*.9)*W*.05+Math.sin(t*2.3)*W*.008,vx=W*.5-sway*.4;
+  x.lineWidth=1.2*dpr;
+  for(let i=-14;i<=14;i++){x.strokeStyle=Math.abs(i)<=1?"rgba(0,0,0,0)":"rgba(255,61,200,.38)";x.beginPath();x.moveTo(vx+i*W*.012,hz);x.lineTo(vx+i*W*.16,H);x.stroke()}
+  const sp=1.6;for(let i=0;i<14;i++){const z=((i+t*sp)%14)/14,y=hz+(H-hz)*Math.pow(z,2.3);x.strokeStyle="rgba(0,229,255,"+(.12+.5*z)+")";x.beginPath();x.moveTo(0,y);x.lineTo(W,y);x.stroke()}
+  x.beginPath();x.moveTo(vx-W*.01,hz);x.lineTo(vx+W*.01,hz);x.lineTo(vx+W*.32,H);x.lineTo(vx-W*.32,H);x.closePath();x.fillStyle="rgba(10,3,22,.78)";x.fill();
+  x.strokeStyle="rgba(255,255,255,.55)";x.lineWidth=2*dpr;x.beginPath();x.moveTo(vx-W*.01,hz);x.lineTo(vx-W*.32,H);x.moveTo(vx+W*.01,hz);x.lineTo(vx+W*.32,H);x.stroke();
+  for(let i=0;i<9;i++){const z=((i+t*sp*1.3)%9)/9,z2=Math.min(1,z+.045),y1=hz+(H-hz)*Math.pow(z,2.3),y2=hz+(H-hz)*Math.pow(z2,2.3),w1=W*.004*(1+z*3);x.fillStyle="rgba(255,230,109,"+(.25+.6*z)+")";x.fillRect(vx-w1/2,y1,w1,y2-y1)}
+  // carro (visto de trás)
+  const cx=W*.5+sway,cy=H*.86,cw=W*.2,ch=H*.13;x.save();x.translate(cx,cy);x.rotate(Math.sin(t*.9)*.03);
+  x.fillStyle="rgba(0,0,0,.45)";x.beginPath();x.ellipse(0,ch*.48,cw*.62,ch*.12,0,0,Math.PI*2);x.fill();
+  g=x.createLinearGradient(0,-ch*.6,0,ch*.5);g.addColorStop(0,"#5b2bd6");g.addColorStop(1,"#1b0b45");x.fillStyle=g;
+  x.beginPath();x.moveTo(-cw*.5,ch*.35);x.lineTo(-cw*.47,-ch*.05);x.lineTo(-cw*.3,-ch*.12);x.lineTo(-cw*.22,-ch*.55);x.lineTo(cw*.22,-ch*.55);x.lineTo(cw*.3,-ch*.12);x.lineTo(cw*.47,-ch*.05);x.lineTo(cw*.5,ch*.35);x.closePath();x.fill();
+  x.fillStyle="#120626";x.beginPath();x.moveTo(-cw*.19,-ch*.48);x.lineTo(cw*.19,-ch*.48);x.lineTo(cw*.25,-ch*.15);x.lineTo(-cw*.25,-ch*.15);x.closePath();x.fill();
+  x.fillStyle="#0b0418";x.fillRect(-cw*.5,ch*.2,cw*.13,ch*.3);x.fillRect(cw*.37,ch*.2,cw*.13,ch*.3);
+  const gl=.75+.25*Math.sin(t*9);x.shadowColor="#ff2e4d";x.shadowBlur=18*dpr*gl;x.fillStyle="#ff2e4d";
+  x.fillRect(-cw*.44,ch*.0,cw*.26,ch*.08);x.fillRect(cw*.18,ch*.0,cw*.26,ch*.08);x.shadowBlur=0;
+  x.fillStyle="rgba(255,255,255,.12)";x.fillRect(-cw*.46,-ch*.03,cw*.92,ch*.02);
+  x.fillStyle="rgba(255,150,60,"+(.35+.3*Math.random())+")";x.beginPath();x.ellipse(-cw*.3,ch*.42,cw*.03,ch*.04*(1+Math.random()),0,0,Math.PI*2);x.ellipse(cw*.3,ch*.42,cw*.03,ch*.04*(1+Math.random()),0,0,Math.PI*2);x.fill();
+  x.restore();
+  // linhas de velocidade
+  x.strokeStyle="rgba(255,255,255,.18)";x.lineWidth=1.5*dpr;for(let i=0;i<10;i++){const k=((i*.137+t*1.4)%1),side=i%2?1:-1,y=hz+(H-hz)*(.15+((i*.31)%1)*.7),xx=W*.5+side*W*(.35+k*.35);x.beginPath();x.moveTo(xx,y);x.lineTo(xx+side*W*.05*k,y+H*.01*k);x.stroke()}
+  // HUD
+  const kmh=Math.round(232+18*Math.sin(t*.7)+6*Math.sin(t*2.1));x.textAlign="right";x.fillStyle="rgba(255,255,255,.92)";x.font="700 "+Math.round(H*.075)+"px Geist,system-ui,sans-serif";x.fillText(kmh,W*.95,H*.93);
+  x.font="600 "+Math.round(H*.028)+"px Geist,system-ui,sans-serif";x.fillStyle="rgba(255,255,255,.6)";x.fillText("km/h",W*.95,H*.96);
+  x.textAlign="left";x.font="700 "+Math.round(H*.04)+"px Geist,system-ui,sans-serif";x.fillStyle="rgba(255,255,255,.9)";x.fillText("2 / 3",W*.05,H*.92);
+  x.fillStyle="rgba(255,255,255,.15)";x.fillRect(W*.05,H*.94,W*.16,H*.008);x.fillStyle="#00e5ff";x.fillRect(W*.05,H*.94,W*.16*((t*.05)%1),H*.008);
+ }
+ function loop(now){draw(now);if(mode==="g"&&now-ft>650){ft=now;fi=(fi+1)%G.length;img.src=G[fi]}raf=vis&&!still?requestAnimationFrame(loop):0}
+ const start=()=>{if(!raf&&vis&&!still)raf=requestAnimationFrame(loop)};
+ new ResizeObserver(()=>{size();draw(performance.now())}).observe(cv);
+ new IntersectionObserver(es=>{vis=es[0].isIntersecting;if(vis)start();else{cancelAnimationFrame(raf);raf=0}}).observe(cv);
+ document.addEventListener("visibilitychange",()=>{if(document.hidden){cancelAnimationFrame(raf);raf=0}else start()});
+ $$(".gpt button").forEach(b=>b.onclick=()=>{mode=b.dataset.m;$$(".gpt button").forEach(o=>o.setAttribute("aria-pressed",String(o===b)));img.src=mode==="g"?G[fi]:"assets/mark/m0.webp"});
+})();
 /* entrada suave das seções e borda do menu ao rolar */
 (()=>{if(!("IntersectionObserver" in window)){$$(".rv").forEach(e=>e.classList.add("in"));return}
  const io=new IntersectionObserver(es=>es.forEach(e=>{if(e.isIntersecting){e.target.classList.add("in");io.unobserve(e.target)}}),{rootMargin:"0px 0px -8% 0px"});

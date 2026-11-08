@@ -1,27 +1,49 @@
 {
-  "repo": "",
-  "version": "1.3.0-beta",
-  "label": "1.3.0 (Beta)",
-  "tag": "v1.3.0-beta",
-  "beta": true,
-  "date": "2026-11-07",
-  "tagline": "Widgets na Home, clima animado e metade do uso de CPU",
-  "notes": "Quadros da Home redimensionáveis e arrastáveis, clima animado, cor do álbum nos controles e metade do uso de CPU.",
+  "repo": "hanzotk/koi-island",
+  "version": "1.4.0",
+  "label": "1.4.0",
+  "tag": "v1.4.0",
+  "beta": false,
+  "date": "2026-11-08",
+  "tagline": "Responda WhatsApp e Discord pela ilha, bateria de notebook, inglês como padrão e novos efeitos",
+  "notes": "Responder WhatsApp e Discord pela ilha, Gmail abrindo o e-mail certo, bateria de notebook, inglês como idioma padrão e novos efeitos e sons.",
   "setup": {
-    "file": "KOI-Island-Setup-1.3.0-beta.exe",
-    "size": 74928302,
-    "sha256": "e928f2d4b6345ce8166aecf83ce2466c8c30a87a73527cff418e5c4ccdfb611f"
+    "file": "KOI-Island-Setup-1.4.0.exe",
+    "size": 74953913,
+    "sha256": "7ce39023bab32995f3b93ada1cbdaac0e3bee6c285828491a06b977e10699e40"
   },
   "portable": {
-    "file": "KOI-Island-1.3.0-beta-portable.exe",
-    "size": 74901310,
-    "sha256": "7ba624384673733edd42cdb93902a9be0c023cc58d8dde6705e28e843a14fa2f"
+    "file": "KOI-Island-1.4.0-portable.exe",
+    "size": 74938488,
+    "sha256": "ad4f9dbc0aec71d8af255b137f608c4ac49f608f20a6bde5c1c7ce9d4ce7c68e"
   },
   "changelog": [
+    {
+      "version": "1.4.0",
+      "date": "2026-11-08",
+      "items": [
+        "Notificações em formato de caixa de entrada, com WhatsApp, Discord e Gmail",
+        "Responder WhatsApp e Discord direto pela ilha (experimental)",
+        "Gmail abre o e-mail certo ao clicar no aviso",
+        "Home com até dois quadros grandes: a ilha se ajusta, editor visual nas Configurações e quadros vazios com +",
+        "Nome da música passando em todos os lugares onde aparece, inclusive com a ilha fechada",
+        "Nível da bateria em notebooks, com animação ao carregar e aviso de bateria fraca",
+        "6 efeitos de luz e 11 sons novos, com Batimento e Piscar refeitos",
+        "Curvas do topo sem o fio de 1 pixel em telas com escala",
+        "Alerta de queda de FPS removido",
+        "Inglês passa a ser o idioma padrão (quem já usava a ilha continua no idioma de antes)",
+        "Traduções completas em inglês, espanhol, francês, alemão e italiano para as novidades recentes",
+        "Quadro Gravação da Home grava direto e escolhe o som do PC e o microfone",
+        "Notificações com a logo do app no lugar das iniciais",
+        "Clima sem cidade fixa de fábrica: até você escolher a sua, mostra uma cidade sorteada",
+        "Nomes longos de dispositivos cabem no quadro de gravação"
+      ]
+    },
     {
       "version": "1.3.0 (Beta)",
       "date": "2026-11-07",
       "items": [
+        "A ilha avisa quando sair versão nova e se atualiza com um clique",
         "Quadros da Home redimensionáveis pelos lados e arrastáveis, com animação",
         "Quadros grandes mostram mais: capa e controles da música, previsão das próximas horas",
         "Clima animado conforme o tempo: sol, chuva, neve, tempestade, neblina e noite",
