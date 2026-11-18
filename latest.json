@@ -1,23 +1,44 @@
 {
   "repo": "hanzotk/koi-island",
-  "version": "1.4.0",
-  "label": "1.4.0",
-  "tag": "v1.4.0",
+  "version": "1.5.0",
+  "label": "1.5.0",
+  "tag": "v1.5.0",
   "beta": false,
-  "date": "2026-11-08",
-  "tagline": "Responda WhatsApp e Discord pela ilha, bateria de notebook, inglês como padrão e novos efeitos",
-  "notes": "Responder WhatsApp e Discord pela ilha, Gmail abrindo o e-mail certo, bateria de notebook, inglês como idioma padrão e novos efeitos e sons.",
+  "date": "2026-11-17",
+  "tagline": "Sino de notificações com categorias, aba Água, ilha flutuante, monitor do sistema novo e sons novos",
+  "notes": "Sino de notificações com categorias e filtro por app, aba Água, ilha flutuante, monitor do sistema novo, gravação de uma janela e sons novos.",
   "setup": {
-    "file": "KOI-Island-Setup-1.4.0.exe",
-    "size": 74953913,
-    "sha256": "7ce39023bab32995f3b93ada1cbdaac0e3bee6c285828491a06b977e10699e40"
+    "file": "KOI-Island-Setup-1.5.0.exe",
+    "size": 74991915,
+    "sha256": "be7b938044d81aa1eb9cd04c6654e5e838d7a097396ab2811ed9320a979679b9"
   },
   "portable": {
-    "file": "KOI-Island-1.4.0-portable.exe",
-    "size": 74938488,
-    "sha256": "ad4f9dbc0aec71d8af255b137f608c4ac49f608f20a6bde5c1c7ce9d4ce7c68e"
+    "file": "KOI-Island-1.5.0-portable.exe",
+    "size": 74999802,
+    "sha256": "b02d8fd27597b468704d2d3e0bdab57dfd60bf9b8e93b4436248be97d5c965ec"
   },
   "changelog": [
+    {
+      "version": "1.5.0",
+      "date": "2026-11-17",
+      "items": [
+        "Sino de notificações ao lado da engrenagem, com categorias: Todas, Não lidas, Lembretes, Mensagens e Sistema",
+        "Filtrar e silenciar notificações por app",
+        "Notificações chegam na hora, sem esperar a próxima leitura",
+        "Aviso maior e mais visível com a ilha fechada",
+        "Telegram, avisos de IAs e alarmes de outros apps",
+        "Pacote de sons novo, mais suaves e graves",
+        "Aba Água: copos do dia, meta, sequência, histórico semanal e mensal e lembrete nas Configurações",
+        "Ilha flutuante ou presa à borda",
+        "Monitor do sistema novo, com GHz, temperatura, processos e o que mais está consumindo",
+        "Gravar só a janela de um app ou outra tela, e vídeo com linha do tempo para adiantar e voltar",
+        "Relógio com dia da semana e data com a ilha fechada e na marca discreta",
+        "Mostrar ou ocultar o player de música com a ilha fechada",
+        "A ilha não fica mais presa aberta com apps maximizados",
+        "Efeitos sonoros suaves ao mudar o volume e ligar o carregador",
+        "Contraste corrigido no tema claro"
+      ]
+    },
     {
       "version": "1.4.0",
       "date": "2026-11-08",
