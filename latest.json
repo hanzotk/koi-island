@@ -1,23 +1,34 @@
 {
   "repo": "hanzotk/koi-island",
-  "version": "1.5.0",
-  "label": "1.5.0",
-  "tag": "v1.5.0",
+  "version": "1.5.1",
+  "label": "1.5.1",
+  "tag": "v1.5.1",
   "beta": false,
-  "date": "2026-11-17",
-  "tagline": "Sino de notificações com categorias, aba Água, ilha flutuante, monitor do sistema novo e sons novos",
-  "notes": "Sino de notificações com categorias e filtro por app, aba Água, ilha flutuante, monitor do sistema novo, gravação de uma janela e sons novos.",
+  "date": "2026-11-18",
+  "tagline": "Links clicáveis nas notificações, gravação a 144 e 165 fps e gravação de janelas corrigida",
+  "notes": "Links clicáveis nas notificações, gravação a 144 e 165 fps e correções na gravação de janelas e nas respostas.",
   "setup": {
-    "file": "KOI-Island-Setup-1.5.0.exe",
-    "size": 74991915,
-    "sha256": "be7b938044d81aa1eb9cd04c6654e5e838d7a097396ab2811ed9320a979679b9"
+    "file": "KOI-Island-Setup-1.5.1.exe",
+    "size": 74989136,
+    "sha256": "34ef079fc7672fe751338689fa193f6a2799878e374f13da4aa86f2ae36004d5"
   },
   "portable": {
-    "file": "KOI-Island-1.5.0-portable.exe",
-    "size": 74999802,
-    "sha256": "b02d8fd27597b468704d2d3e0bdab57dfd60bf9b8e93b4436248be97d5c965ec"
+    "file": "KOI-Island-1.5.1-portable.exe",
+    "size": 74981844,
+    "sha256": "7c8e9467bc48ae501aa5500dd4ecfad453e9f0f7669ee6f7835c1057fad55d5a"
   },
   "changelog": [
+    {
+      "version": "1.5.1",
+      "date": "2026-11-18",
+      "items": [
+        "Links nas notificações agora são clicáveis e abrem no navegador",
+        "Gravação a 144 e 165 fps",
+        "Gravar só a janela de um app voltou a funcionar, com o som do PC",
+        "Tela de escolher o que gravar maior, com os nomes dentro dos cartões",
+        "Responder pela ilha encontra a Central de Notificações com mais confiança"
+      ]
+    },
     {
       "version": "1.5.0",
       "date": "2026-11-17",
