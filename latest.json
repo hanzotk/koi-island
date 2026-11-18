@@ -6,16 +6,16 @@
   "beta": false,
   "date": "2026-11-18",
   "tagline": "Links clicáveis nas notificações, gravação a 144 e 165 fps e gravação de janelas corrigida",
-  "notes": "Links clicáveis nas notificações, gravação a 144 e 165 fps e correções na gravação de janelas e nas respostas.",
+  "notes": "Mensagens direto da ilha, vidro Crystal ajustável, gravação de apps em qualquer modo na frequência do monitor e mais.",
   "setup": {
     "file": "KOI-Island-Setup-1.5.1.exe",
-    "size": 75009783,
-    "sha256": "2626c4a6e6a9ff8402e117ea2b4d0bf6158abbb7d7069dec698bddbd1d5d02af"
+    "size": 75039509,
+    "sha256": "3614436543ebe4cea4c58436b341ca89ec40344575e8b274f680c66b9badfb67"
   },
   "portable": {
     "file": "KOI-Island-1.5.1-portable.exe",
-    "size": 74993689,
-    "sha256": "da0523c272d560873479df7c7b530e0014aa9f2aadb7ae89dba7ccd9f48d80fb"
+    "size": 74989190,
+    "sha256": "e9de7098cb5c146db77e35b21f7dc9765deeda090da3905fe904284b5d690bcc"
   },
   "changelog": [
     {
@@ -29,7 +29,12 @@
         "Responder pela ilha encontra a Central de Notificações com mais confiança",
         "Seletor de cor próprio no calendário, que não fica mais escondido atrás da ilha",
         "Ajuste vertical para a ilha flutuando, no lugar da distância da borda",
-        "Prévia da posição centralizada certinho com a ilha flutuando"
+        "Prévia da posição centralizada certinho com a ilha flutuando",
+        "Desfoque e opacidade ajustáveis no tema Crystal, com vidro transparente como no iOS",
+        "Mandar mensagens pelo WhatsApp, Telegram e Discord direto da ilha, sem depender de notificação",
+        "Gravar um app em janela, maximizado ou em tela cheia",
+        "Gravação na mesma frequência do monitor",
+        "Gráficos do Sistema ocupando a largura toda"
       ]
     },
     {
