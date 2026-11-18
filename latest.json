@@ -9,13 +9,13 @@
   "notes": "Links clicáveis nas notificações, gravação a 144 e 165 fps e correções na gravação de janelas e nas respostas.",
   "setup": {
     "file": "KOI-Island-Setup-1.5.1.exe",
-    "size": 74989136,
-    "sha256": "34ef079fc7672fe751338689fa193f6a2799878e374f13da4aa86f2ae36004d5"
+    "size": 75009783,
+    "sha256": "2626c4a6e6a9ff8402e117ea2b4d0bf6158abbb7d7069dec698bddbd1d5d02af"
   },
   "portable": {
     "file": "KOI-Island-1.5.1-portable.exe",
-    "size": 74981844,
-    "sha256": "7c8e9467bc48ae501aa5500dd4ecfad453e9f0f7669ee6f7835c1057fad55d5a"
+    "size": 74993689,
+    "sha256": "da0523c272d560873479df7c7b530e0014aa9f2aadb7ae89dba7ccd9f48d80fb"
   },
   "changelog": [
     {
@@ -26,7 +26,10 @@
         "Gravação a 144 e 165 fps",
         "Gravar só a janela de um app voltou a funcionar, com o som do PC",
         "Tela de escolher o que gravar maior, com os nomes dentro dos cartões",
-        "Responder pela ilha encontra a Central de Notificações com mais confiança"
+        "Responder pela ilha encontra a Central de Notificações com mais confiança",
+        "Seletor de cor próprio no calendário, que não fica mais escondido atrás da ilha",
+        "Ajuste vertical para a ilha flutuando, no lugar da distância da borda",
+        "Prévia da posição centralizada certinho com a ilha flutuando"
       ]
     },
     {
