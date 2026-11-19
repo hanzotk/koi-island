@@ -9,13 +9,13 @@
   "notes": "Mensagens direto da ilha, vidro Crystal ajustável, gravação de apps em qualquer modo na frequência do monitor e mais.",
   "setup": {
     "file": "KOI-Island-Setup-1.5.1.exe",
-    "size": 75007205,
-    "sha256": "ca06f989059b5ca1a9c6b7386a7c65bd369bce413ce4f08c52090a981b7986db"
+    "size": 75042437,
+    "sha256": "707ea115258b9aae82d18f51666d0fcb0bc01b4a081dd68e16ab2444c0d0a69a"
   },
   "portable": {
     "file": "KOI-Island-1.5.1-portable.exe",
-    "size": 75008365,
-    "sha256": "d4c3f347cd72e4914f33a9b5f640d8a00dccdc88da8bd9044b9c0deb7bb0ad15"
+    "size": 75006256,
+    "sha256": "ebf62c43f7e2bdf7436dd1d99a5dd3d135c39278996e7a84c6d8e4088b6ab244"
   },
   "changelog": [
     {
