@@ -1,23 +1,67 @@
 {
   "repo": "hanzotk/koi-island",
-  "version": "1.5.0",
-  "label": "1.5.0",
-  "tag": "v1.5.0",
+  "version": "1.6.0",
+  "label": "1.6.0",
+  "tag": "v1.6.0",
   "beta": false,
-  "date": "2026-11-17",
-  "tagline": "Sino de notificações com categorias, aba Água, ilha flutuante, monitor do sistema novo e sons novos",
-  "notes": "Sino de notificações com categorias e filtro por app, aba Água, ilha flutuante, monitor do sistema novo, gravação de uma janela e sons novos.",
+  "date": "2026-11-22",
+  "tagline": "Bateria dos dispositivos sem fio, notificações com a logo de cada IA e Crystal mais leve",
+  "notes": "Veja a bateria do mouse, teclado, fone e controle sem fio direto na ilha, com aviso quando estiver acabando.",
   "setup": {
-    "file": "KOI-Island-Setup-1.5.0.exe",
-    "size": 74991915,
-    "sha256": "be7b938044d81aa1eb9cd04c6654e5e838d7a097396ab2811ed9320a979679b9"
+    "file": "KOI-Island-Setup-1.6.0.exe",
+    "size": 75084903,
+    "sha256": "c396b081d7a34eb83aca1e3684d661d660345fbb9ac9c8109d247317b6ec20db"
   },
   "portable": {
-    "file": "KOI-Island-1.5.0-portable.exe",
-    "size": 74999802,
-    "sha256": "b02d8fd27597b468704d2d3e0bdab57dfd60bf9b8e93b4436248be97d5c965ec"
+    "file": "KOI-Island-1.6.0-portable.exe",
+    "size": 75066632,
+    "sha256": "05a5526de2070c17649771a2234f050fbb7944ddc2e28b5048757ed9ac5f8447"
   },
   "changelog": [
+    {
+      "version": "1.6.0",
+      "date": "2026-11-22",
+      "items": [
+        "Bateria do mouse, teclado, fone e controle sem fio na ilha fechada e num quadro novo da Home",
+        "Aviso de bateria fraca dos dispositivos em 15% e em 5%",
+        "Funciona com aparelhos Bluetooth, controles de Xbox, mouses Rapoo e teclados Attack Shark pelo receptor",
+        "Notificações de IAs com a logo e a cor de cada uma: ChatGPT, Gemini, Copilot, Perplexity, Grok, DeepSeek, Meta AI e Mistral",
+        "Logo do Claude corrigida nas notificações",
+        "Tema Crystal com o fundo desfocado aparecendo de verdade e gastando bem menos",
+        "Gravação de tela removida, deixando a ilha mais leve",
+        "Aparelhos ligados por receptor 2.4G aparecem na aba Bluetooth, com a bateria",
+        "Aba Bluetooth e Wi-Fi redesenhada, com a lista em duas colunas",
+        "Aviso quando o PC não tem Bluetooth ou Wi-Fi",
+        "Bateria do notebook e dos aparelhos com o número dentro do ícone, verde só no carregador",
+        "Escolher um quadro novo para a Home ficou com mais espaço",
+        "Com a aba Jogo selecionada e nenhum jogo aberto, a ilha fica igual à Home",
+        "Aba Clima redesenhada: cartão com o tempo de agora, próximas horas e próximos dias com a faixa de temperatura",
+        "Quadro de Clima com o fundo acompanhando o tempo e um sol animado novo",
+        "Quadro Baterias com anéis no estilo do iPhone",
+        "Marca discreta sempre pequena"
+      ]
+    },
+    {
+      "version": "1.5.1",
+      "date": "2026-11-19",
+      "items": [
+        "Links nas notificações agora são clicáveis e abrem no navegador",
+        "Gravação a 144 e 165 fps",
+        "Gravar só a janela de um app voltou a funcionar, com o som do PC",
+        "Tela de escolher o que gravar maior, com os nomes dentro dos cartões",
+        "Responder pela ilha encontra a Central de Notificações com mais confiança",
+        "Seletor de cor próprio no calendário, que não fica mais escondido atrás da ilha",
+        "Ajuste vertical para a ilha flutuando, no lugar da distância da borda",
+        "Prévia da posição centralizada certinho com a ilha flutuando",
+        "Desfoque e opacidade ajustáveis no tema Crystal, com vidro transparente como no iOS",
+        "Mandar mensagens pelo WhatsApp, Telegram e Discord direto da ilha, sem depender de notificação",
+        "Gravar um app em janela, maximizado ou em tela cheia",
+        "Gravação na mesma frequência do monitor",
+        "Gráficos do Sistema ocupando a largura toda",
+        "Cliques voltaram a funcionar em toda a ilha, inclusive no lado direito",
+        "Vidro do Crystal atualiza menos com a ilha fechada, gastando menos CPU"
+      ]
+    },
     {
       "version": "1.5.0",
       "date": "2026-11-17",
