@@ -9,13 +9,13 @@
   "notes": "Veja a bateria do mouse, teclado, fone e controle sem fio direto na ilha, com aviso quando estiver acabando.",
   "setup": {
     "file": "KOI-Island-Setup-1.6.0.exe",
-    "size": 75084903,
-    "sha256": "c396b081d7a34eb83aca1e3684d661d660345fbb9ac9c8109d247317b6ec20db"
+    "size": 75069794,
+    "sha256": "396533031e3b673a708e80ce6b230a18d1694ece9e4341ebac6c203433ffc51b"
   },
   "portable": {
     "file": "KOI-Island-1.6.0-portable.exe",
-    "size": 75066632,
-    "sha256": "05a5526de2070c17649771a2234f050fbb7944ddc2e28b5048757ed9ac5f8447"
+    "size": 75059177,
+    "sha256": "3c0b0019f25473ae2c4d8071737c582971716020bf38cd1d744b4386523538a9"
   },
   "changelog": [
     {
